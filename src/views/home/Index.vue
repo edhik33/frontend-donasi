@@ -15,7 +15,7 @@
                         <h3 class="display-4 font-weight-bold jumbotron-santri-koding">Mensurgakan Indonesia dengan Al-Qur’an!</h3>
                         <p class="lead mt-5" style="line-height: 35px;">Selamat datang di gerakan meng-Qur’an-kan Indonesia. Indonesia butuh bantuan Anda. Bergabunglah bersama kami untuk bersama-sama menyelamatkan Indonesia di dunia dan akhirat.</p>
                         <hr class="my-4">
-                        <form action="https://santrikoding.com/search" method="GET" class="card-search card-sm" style="margin-top: 20px">
+                        <form action="" method="GET" class="card-search card-sm" style="margin-top: 20px">
                             <div class="card-body row no-gutters align-items-center mb-5" style="padding: .5rem">
                                 <div class="col-auto">
 
@@ -161,7 +161,7 @@
         
        
                     <div class="col-md-6 col-12 mb-4"  v-for="post in posts" :key="post.id">
-                <a href="https://santrikoding.com/tutorial-set/tutorial-framework7-bahasa-indonesia-untuk-pemula" class="text-decoration-none text-dark">
+                <a href="" class="text-decoration-none text-dark">
                     <div class="card  h-100 shadow p-3 mb-3 bg-white rounded">
                         <div class="row no-gutters p-2">
                             <div class="col-md-4">
