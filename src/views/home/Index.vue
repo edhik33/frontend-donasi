@@ -101,8 +101,8 @@
                                 </div>
 
                             <div class="card-footer mt-2">
-                                <div class="row align-items-center jumbotron-santri-koding">
-                                    <div class="card-body text-center">
+                                
+                                  
                                        
                                           <div class="row align-items-left jumbotron-santri-koding">
                                                <div class="col-12 col-md-6 text-left">
@@ -113,11 +113,11 @@
                                 <div class="row align-items-center jumbotron-santri-koding">
                                     <div class="col-6 col-md-6 text-left">
                                          <span style="color:grey"> Terkumpul</span> 
-                                                <h4 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h4> 
+                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
                                    </div>
                                     <div class="col-6 col-md-6 text-right">
                                          <span style="color:grey">Target Donasi</span>
-                                                                         <h4 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.target_donation) }}</h4> 
+                                                                         <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.target_donation) }}</h6> 
                                  </div>
                                   <div class="col-6 col-md-6 text-left">
                                     <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
@@ -126,9 +126,9 @@
                                         </router-link>
                                       
                                   </div>
-                            </div>
+                          
                         
-                    </div>
+                  
                 </div>
             </div>
          </div>
