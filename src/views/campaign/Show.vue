@@ -44,10 +44,18 @@
                   <div class="progress mt-2 mb-2">
                                     <div class="progress-bar bg-success rounded-0" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                                     </div>
-                                     <span style="color:grey"> Terkumpul</span> 
-                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">
-                                               Rp. {{ campaign.donation }}</h6> 
+                                    
+                                <div class="row align-items-center jumbotron-santri-koding">
+                                    <div class="col-6 col-md-6 text-left">
+                                         <span style="color:grey"> Terkumpul</span> 
+                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
+                                   </div>
+                                    <div class="col-6 col-md-6 text-right">
+                                         <span style="color:grey">Target Donasi</span>
+                                                                         <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.target_donation) }}</h6> 
+                                 </div>
                                                    
+                                          </div>
                                           </div>
                                           </div>
                                         
