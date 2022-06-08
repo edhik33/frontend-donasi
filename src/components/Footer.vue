@@ -8,19 +8,12 @@
                             <img src="https://sidaq.org/wp-content/uploads/2022/05/sidaq-logo-fix-new.png" class="mt-3 text-center" style="width: 200px">
                             <p class="mt-2">Mari selamatkan Indonesia bersama 25 juta santri penghafal Al-Qur’an.</p>
                             <div class="social mt-4" style="margin-bottom: 30px">
-                                <a href="https://www.facebook.com/com.santrikoding/"><img src="https://santrikoding.com/images/045-facebook.svg" style="width: 25px;" class="icon-footer"></a>
-                                <a href="https://youtube.com/c/SantriKoding"><img src="https://santrikoding.com/images/002-youtube.svg" class="icon-footer"></a>
+                                <a href=""><img src="https://santrikoding.com/images/045-facebook.svg" style="width: 25px;" class="icon-footer"></a>
+                                <a href=""><img src="https://santrikoding.com/images/002-youtube.svg" class="icon-footer"></a>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-8 order-sm-2 order-md-1 bg-light-custom py-4">
                             <div class="row">
-                                <div class="col-md-4 col-6" >
-                                    <h6 class="font-weight-bold">PROGRAM UNGGULAN</h6>
-                                    <hr>
-                                    <div >
-                                        <router-link  :to="{name: 'detail_campaign', params: { slug: campaign.slug }}" v-for="campaign in campaigns" :key="campaign.id" class="btn btn-sm btn-outline-success mb-2 m-2 text-secondary">{{ campaign.title.toUpperCase() }}</router-link>
-                                    </div>
-                                </div>
 
                                 <div class="col-md-4 col-6">
                                     <h6 class="font-weight-bold">TAGS</h6>

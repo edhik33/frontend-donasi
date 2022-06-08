@@ -12,7 +12,7 @@
                     <div class="col-md-12 mb-5 bg-dark"></div>
 
                     <div class="col-md-7 mt-5">
-                        <h3 class="display-4 font-weight-bold jumbotron-santri-koding">Mensurgakan Indonesia dengan Al-Qur’an!</h3>
+                        <h5 class="display-4 font-weight-bold jumbotron-santri-koding">Mensurgakan Indonesia dengan Al-Qur’an!</h5>
                         <p class="lead mt-5" style="line-height: 35px;">Selamat datang di gerakan meng-Qur’an-kan Indonesia. Indonesia butuh bantuan Anda. Bergabunglah bersama kami untuk bersama-sama menyelamatkan Indonesia di dunia dan akhirat.</p>
                         <hr class="my-4">
                         <form action="" method="GET" class="card-search card-sm" style="margin-top: 20px">
