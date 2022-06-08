@@ -11,7 +11,7 @@
                 <div class="row mt-20 mb-0 bg-white shadow p-3 mb-5 bg-white " style="border-radius: 20px;">
                     <div class="col-md-12 mb-5 bg-dark"></div>
 
-                   
+                   <div class="col-md-7 mt-5">
                         <h2 class="font-weight-bold">Mensurgakan Indonesia dengan Al-Qur’an!</h2>
                         <p class="lead mt-5" style="line-height: 35px;">Selamat datang di gerakan meng-Qur’an-kan Indonesia. Indonesia butuh bantuan Anda. Bergabunglah bersama kami untuk bersama-sama menyelamatkan Indonesia di dunia dan akhirat.</p>
                         <hr class="my-4">
@@ -37,6 +37,7 @@
             <div class="col-md-5 d-none d-md-block rounded d-lg-block text-right">
                 <img src="/assets/1.png" class="w-100 text-right" style="height:364px">
             </div>
+        </div>
         </div>
   
 
