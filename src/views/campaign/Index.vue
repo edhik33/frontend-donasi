@@ -54,11 +54,11 @@
                                 <div class="row align-items-center jumbotron-santri-koding">
                                     <div class="col-6 col-md-6 text-left">
                                          <span style="color:grey"> Terkumpul</span> 
-                                                <h4 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ campaign.donation }}</h4> 
+                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ campaign.donation }}</h6> 
                                    </div>
                                     <div class="col-6 col-md-6 text-right">
                                          <span style="color:grey">Target Donasi</span>
-                                                                         <h4 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ campaign.donation }}</h4> 
+                                                                         <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ campaign.donation }}</h6> 
                                  </div>
                                   <div class="col-6 col-md-6 text-left">
                                     <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
