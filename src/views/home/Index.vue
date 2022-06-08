@@ -150,18 +150,18 @@
 <!-- POST PROGRAM -->
 
 
-<div class="container">
-    <div class="row">
-            <div class="col-md-12">
-                <h4 class="font-weight-bold">Artikel</h4>
-            </div>
-        </div>
+<div class="container">    
+        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-5 bg-white " style="border-radius: 20px;">
+        <div class="col-md-12 mb-5"></div>
 
-           <div class="row mt-5 mb-0 bg-white shadow p-3 mb-5 bg-white " style="border-radius: 20px;">
-        <div class="col-md-12 mb-5 bg-dark"></div>
-        
-       
-                    <div class="col-md-6 col-12 mb-4"  v-for="post in posts" :key="post.id">
+       <div class="container">
+                  <div class="row mb-3 text-left">
+                        <div class="col-md-12">
+                <h4>Artikel</h4>
+            </div>
+                </div>
+            </div>
+                    <div class="col-12 col-md-4 col-lg-4 mb-4"  v-for="post in posts" :key="post.id">
                 <a href="" class="text-decoration-none text-dark">
                     <div class="card  h-100 shadow p-3 mb-3 bg-white rounded">
                         <div class="row no-gutters p-2">
@@ -183,7 +183,8 @@
                 </a>        
             </div>
         </div>
-    </div>                   
+         </div>
+                 
       <div class="col-md-12 mb-4">
        <div class="text-center mt-3">
                 <router-link :to="{name: 'campaign'}" class="btn btn-success shadow-sm p-2 mb-3 bg-white text-success rounded">Lihat Semua Artikel <i class="fa fa-long-arrow-alt-right"></i></router-link>
@@ -192,6 +193,7 @@
 
             
                         
+    
 
 
 <!-- END POST PROGRAM -->
