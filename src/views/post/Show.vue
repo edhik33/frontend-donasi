@@ -14,7 +14,6 @@
                     <div class="img-circle">
                     </div>
                     <h3 class="text-dark font-weight-bold mt-3"> Berita </h3>
-                    <h6 class="text-dark">{{ post.title }}.</h6>
                 </div>
             </div>
         </div>
@@ -33,23 +32,23 @@
                                 <img :src="post.image" class="w-100 rounded lazy" style="object-fit: cover" >
                                          <div class="row mt-3 text-left">
                         <div class="col-md-12">
-                    <h4 class="text-center text-secondary">{{ post.title }}</h4>
+                    <h3 class="text-center mt-3 text-secondary">{{ post.title }}</h3>
                         <div class="card border-0 shadow-sm rounded">
                             <div class="card-body">
                                 <hr>
 
-                                  <h6 class="mt-3 text-secondary" v-html="post.content"></h6>
+                                  <h5 class="mt-3 text-secondary" v-html="post.content"></h5>
                             </div>
                         </div>
                     </div>
 </div>
                 </div>
+                </div>
+                </div>
+                </div>
+
 
            </div>
-           </div>
-
-           </div>
-
 
 
         </div>
