@@ -1,4 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import router from './router'
+import mixins from './mixins'
+
+const app = createApp(App)
+
+app.use(router)
+app.mixin(mixins)
+
+//mount
+app.mount('#app')
