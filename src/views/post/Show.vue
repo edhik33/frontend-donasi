@@ -32,8 +32,14 @@
                                 <img :src="post.image" class="w-100 rounded lazy" style="object-fit: cover" >
                                          <div class="row mt-3 text-left">
                         <div class="col-md-12">
+<<<<<<< HEAD
                       <h4 class="text-secondary font-weight-bolder">{{ post.title }}</h4>
                       
+=======
+                    <h3 class="text-center mt-3 text-secondary">{{ post.title }}</h3>
+                        <div class="card border-0 shadow-sm rounded">
+                            <div class="card-body">
+>>>>>>> 1763ebc30438bc0409d71ded3cde9fd29f3e7ea4
                                 <hr>
 
                                   <h5 class="mt-3 text-secondary" v-html="post.content"></h5>

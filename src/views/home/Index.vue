@@ -11,8 +11,8 @@
                 <div class="row mt-20 mb-0 bg-white shadow p-3 mb-5 bg-white " style="border-radius: 20px;">
                     <div class="col-md-12 mb-5 bg-dark"></div>
 
-                    <div class="col-md-7 mt-5">
-                        <h5 class="display-4 font-weight-bold jumbotron-santri-koding">Mensurgakan Indonesia dengan Al-Qur’an!</h5>
+                   <div class="col-md-7 mt-5">
+                        <h2 class="font-weight-bold">Mensurgakan Indonesia dengan Al-Qur’an!</h2>
                         <p class="lead mt-5" style="line-height: 35px;">Selamat datang di gerakan meng-Qur’an-kan Indonesia. Indonesia butuh bantuan Anda. Bergabunglah bersama kami untuk bersama-sama menyelamatkan Indonesia di dunia dan akhirat.</p>
                         <hr class="my-4">
                         <form action="" method="GET" class="card-search card-sm" style="margin-top: 20px">
@@ -38,7 +38,8 @@
                 <img src="/assets/1.png" class="w-100 text-right" style="height:364px">
             </div>
         </div>
-    </div>
+        </div>
+  
 
          
                <!-- category section -->
@@ -146,10 +147,21 @@
         <div class="row mt-5 mb-0 bg-white shadow p-2 mb-5 bg-white " style="border-radius: 20px;">
         <div class="col-md-12 mb-5"></div>
 
+<<<<<<< HEAD
        <div class="container">
                   <div class="row mb-3 text-left">
                         <div class="col-md-12">
                 <h4>Campaign</h4>
+=======
+<div class="container">    
+        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-5 bg-white " style="border-radius: 20px;">
+        <div class="col-md-12 mb-5"></div>
+
+       <div class="container">
+                  <div class="row mb-3 text-left">
+                        <div class="col-md-12">
+                <h4>Artikel</h4>
+>>>>>>> 1763ebc30438bc0409d71ded3cde9fd29f3e7ea4
             </div>
                 </div>
             </div>
@@ -186,6 +198,7 @@
 
             
                         
+    
 
 
 <!-- END POST PROGRAM -->
