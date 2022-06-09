@@ -78,7 +78,7 @@
 
 <!-- PROGRAM -->
 <div class="container">    
-        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-5 bg-white " style="border-radius: 20px;">
+        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-3 bg-white " style="border-radius: 20px;">
         <div class="col-md-12 mb-5"></div>
 
        <div class="container">
@@ -91,17 +91,17 @@
             <div class="col-12 col-md-4 col-lg-4 mb-4" v-for="campaign in campaigns" :key="campaign.id">
                 <div class="card h-80 shadow p-2" style="border-radius:12px">
                          <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
-                             <div class="card-footer " style="height: 40px;background: #fff;">
+                             <div class="mt-3" style="height: 40px;background: #fff;">
                                 <span class=" text-dark" style="font-size: 15px;">{{ campaign.title }}</span>
                              </div>
 
-                            <div class="container">
+                          
                                 <div class="progress mt-2 mb-2">
                                     <div class="progress-bar bg-success rounded-0" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                                     </div>
-                                </div>
+                               
 
-                            <div class="card-footer mt-2">
+                            <div class="mt-2">
                                 
                                   
                                        
@@ -116,14 +116,14 @@
                                          <span style="color:grey"> Terkumpul</span> 
                                                 <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
                                    </div>
-
+                              
                                       <div class="col-6 col-md-6 text-right">
                                          <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
                                             class="text-dark text-decoration-none">
                                            <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
                                         </router-link>
                                    </div>
-                   
+                     </div>
                 </div>
             </div>
          </div>
@@ -143,28 +143,19 @@
 
 <!-- POST PROGRAM -->
 
-<div class="container">    
-        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-5 bg-white " style="border-radius: 20px;">
-        <div class="col-md-12 mb-5"></div>
 
-<<<<<<< HEAD
-       <div class="container">
-                  <div class="row mb-3 text-left">
-                        <div class="col-md-12">
-                <h4>Campaign</h4>
-=======
 <div class="container">    
-        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-5 bg-white " style="border-radius: 20px;">
+        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-3 bg-white " style="border-radius: 20px;">
         <div class="col-md-12 mb-5"></div>
 
        <div class="container">
                   <div class="row mb-3 text-left">
                         <div class="col-md-12">
                 <h4>Artikel</h4>
->>>>>>> 1763ebc30438bc0409d71ded3cde9fd29f3e7ea4
+
             </div>
                 </div>
-            </div>
+       </div>
                     <div class="col-12 col-md-4 col-lg-4 mb-4"  v-for="post in posts" :key="post.id">
                 <a href="" class="text-decoration-none text-dark">
                     <div class="card  h-100 shadow p-3 mb-3 bg-white rounded">
@@ -188,7 +179,8 @@
                 </a>        
             </div>
         </div>
-         </div>
+
+     
                  
       <div class="col-md-12 mb-4">
        <div class="text-center mt-3">

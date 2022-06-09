@@ -68,7 +68,7 @@
                 </div>
             </div>
        
-               <div class="jumbotron shadow-custom rounded-0 mb-0">
+               <div class="jumbotron rounded-0 mb-0">
             
                    <div class="container">
    <div class="row mb-0 bg-white shadow p-2 bg-white" style="border-radius: 20px;">

@@ -31,17 +31,17 @@
      
                 <div class="card h-80 shadow p-2" style="border-radius:12px">
                          <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
-                             <div class="card-footer " style="height: 40px;background: #fff;">
+                             <div class="mt-3 " style="height: 40px;background: #fff;">
                                 <span class=" text-dark" style="font-size: 15px;">{{ campaign.title }}</span>
                              </div>
 
-                            <div class="container">
+                           
                                 <div class="progress mt-2 mb-2">
-                                    <div class="progress-bar bg-success rounded-0" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{ percentage(campaign.donation)}}</div>
+                                    <div class="progress-bar bg-success rounded-0" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">28%</div>
                                     </div>
-                                </div>
+                              
 
-                            <div class="card-footer mt-2">
+                            <div class="mt-2">
                                 <div class="row align-items-center jumbotron-santri-koding">
                                     <div class="card-body text-center">
                                        
@@ -53,23 +53,12 @@
 
                                 <div class="row align-items-center jumbotron-santri-koding">
                                     <div class="col-6 col-md-6 text-left">
-<<<<<<< HEAD
+
                                           <span style="color:grey"> Terkumpul</span> 
                                                 <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
                                    </div>
-                                    <div class="col-6 col-md-6 text-right">
-                                          <span style="color:grey">Target Donasi</span>
-                                                                         <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.target_donation) }}</h6> 
-=======
-                                         <span style="color:grey"> Terkumpul</span> 
-                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ campaign.donation }}</h6> 
-                                   </div>
-                                    <div class="col-6 col-md-6 text-right">
-                                         <span style="color:grey">Target Donasi</span>
-                                                                         <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ campaign.donation }}</h6> 
->>>>>>> 1763ebc30438bc0409d71ded3cde9fd29f3e7ea4
-                                 </div>
-                                  <div class="col-6 col-md-6 text-left">
+                                 
+                                  <div class="col-6 col-md-6 text-right">
                                     <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
                                             class="text-dark text-decoration-none">
                                            <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
