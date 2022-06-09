@@ -16,16 +16,18 @@
                             <div class="row">
 
                                 <div class="col-md-4 col-6">
-                                    <h6 class="font-weight-bold">TAGS</h6>
+                                    <h6 class="font-weight-bold">Menu</h6>
                                     <hr>
-                                     <div v-if="tags.length > 0">
-                                        <router-link :to="{name: 'detail_tag', params: { slug: tag.slug }}" v-for="tag in tags" :key="tag.id" class="btn btn-sm btn-outline-success mb-2 m-2 text-secondary">{{ tag.name.toUpperCase() }}</router-link>
-                                    </div>
-                                    <div v-else class="text-center">
-                                        <ListLoader/>
-                                    </div>
-                                </div>
+                                    
+                                           <router-link :to="{name: 'campaign'}" id="megamneu" href="" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-secondary">Program</router-link>
 
+                                           <router-link :to="{name: 'post'}" id="megamneu" href="" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-secondary ">Berita</router-link>
+                                   
+                                             <router-link :to="{name: 'contact'}" id="megamneu" href="" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-secondary">Kontak</router-link>
+                                        
+                                             <router-link :to="{name: 'about'}" id="megamneu" href="" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-secondary">About</router-link>
+                             
+                              </div>
                                 <div class="col-md-4 col-6">
                                     <h6 class="font-weight-bold">ALAMAT</h6>
                                     <hr>
@@ -34,10 +36,10 @@
                                        
                                     </ul>
                                 </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                                </div>
+               
+            </div>
+            </div>
                 </div>
    </div>
         </div>
@@ -57,11 +59,7 @@
 </template>
 
 <script>
-    //import content loader
-    import {
-        ListLoader
-    } from 'vue-content-loader';
-
+ 
     //import axios
     import axios from 'axios';
 
@@ -72,8 +70,6 @@
         name: 'FooterComponent',
 
         components: {
-            //loader component
-            ListLoader
         },
         
         setup() {

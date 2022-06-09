@@ -29,15 +29,15 @@
     <div class="row justify-content-center">
                 <div class="col-12 col-md-4 col-lg-4 mb-5" v-for="campaign in campaigns" :key="campaign.id">
      
-                <div class="card h-100 shadow p-2" style="border-radius:12px">
+                <div class="card h-80 shadow p-2" style="border-radius:12px">
                          <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
-                             <div class="card-footer text-center" style="height: 40px;background: #fff;">
-                                <span class="text-center text-dark" style="font-size: 15px;">{{ campaign.title }}</span>
+                             <div class="card-footer " style="height: 40px;background: #fff;">
+                                <span class=" text-dark" style="font-size: 15px;">{{ campaign.title }}</span>
                              </div>
 
                             <div class="container">
                                 <div class="progress mt-2 mb-2">
-                                    <div class="progress-bar bg-success rounded-0" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                                    <div class="progress-bar bg-success rounded-0" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{ percentage(campaign.donation)}}</div>
                                     </div>
                                 </div>
 
@@ -53,12 +53,12 @@
 
                                 <div class="row align-items-center jumbotron-santri-koding">
                                     <div class="col-6 col-md-6 text-left">
-                                         <span style="color:grey"> Terkumpul</span> 
-                                                <h4 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ campaign.donation }}</h4> 
+                                          <span style="color:grey"> Terkumpul</span> 
+                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
                                    </div>
                                     <div class="col-6 col-md-6 text-right">
-                                         <span style="color:grey">Target Donasi</span>
-                                                                         <h4 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ campaign.donation }}</h4> 
+                                          <span style="color:grey">Target Donasi</span>
+                                                                         <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.target_donation) }}</h6> 
                                  </div>
                                   <div class="col-6 col-md-6 text-left">
                                     <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"

@@ -88,10 +88,10 @@
                 </div>
             </div>
             <div class="col-12 col-md-4 col-lg-4 mb-4" v-for="campaign in campaigns" :key="campaign.id">
-                <div class="card h-100 shadow p-2" style="border-radius:12px">
+                <div class="card h-80 shadow p-2" style="border-radius:12px">
                          <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
-                             <div class="card-footer text-center" style="height: 40px;background: #fff;">
-                                <span class="text-center text-dark" style="font-size: 15px;">{{ campaign.title }}</span>
+                             <div class="card-footer " style="height: 40px;background: #fff;">
+                                <span class=" text-dark" style="font-size: 15px;">{{ campaign.title }}</span>
                              </div>
 
                             <div class="container">
@@ -115,20 +115,14 @@
                                          <span style="color:grey"> Terkumpul</span> 
                                                 <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
                                    </div>
-                                    <div class="col-6 col-md-6 text-right">
-                                         <span style="color:grey">Target Donasi</span>
-                                                                         <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.target_donation) }}</h6> 
-                                 </div>
-                                  <div class="col-6 col-md-6 text-left">
-                                    <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
+
+                                      <div class="col-6 col-md-6 text-right">
+                                         <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
                                             class="text-dark text-decoration-none">
                                            <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
                                         </router-link>
-                                      
-                                  </div>
-                          
-                        
-                  
+                                   </div>
+                   
                 </div>
             </div>
          </div>
@@ -148,30 +142,30 @@
 
 <!-- POST PROGRAM -->
 
+<div class="container">    
+        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-5 bg-white " style="border-radius: 20px;">
+        <div class="col-md-12 mb-5"></div>
 
-<div class="container">
-    <div class="row">
-            <div class="col-md-12">
-                <h4 class="font-weight-bold">Artikel</h4>
+       <div class="container">
+                  <div class="row mb-3 text-left">
+                        <div class="col-md-12">
+                <h4>Campaign</h4>
             </div>
-        </div>
-
-           <div class="row mt-5 mb-0 bg-white shadow p-3 mb-5 bg-white " style="border-radius: 20px;">
-        <div class="col-md-12 mb-5 bg-dark"></div>
-        
-       
-                    <div class="col-md-6 col-12 mb-4"  v-for="post in posts" :key="post.id">
+                </div>
+            </div>
+                    <div class="col-12 col-md-4 col-lg-4 mb-4"  v-for="post in posts" :key="post.id">
                 <a href="" class="text-decoration-none text-dark">
                     <div class="card  h-100 shadow p-3 mb-3 bg-white rounded">
                         <div class="row no-gutters p-2">
-                            <div class="col-md-4">
-                               <img :src="post.image"  class="w-100 rounded lazy" style="object-fit: cover">
+                            <div class="col-md-12">
+                                  <router-link :to="{name: 'detail_post', params: {slug: post.slug}}">
+                                  <img :src="post.image"  class="w-100 rounded lazy" style="object-fit: cover"></router-link>
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body p-3">
                                      <router-link :to="{name: 'detail_post', params: {slug: post.slug}}"
                                             class="text-dark text-decoration-none">
-                                            <h4>{{ post.title }}</h4>
+                                             <h5 class="text-secondary font-weight-bolder">{{ post.title }}</h5>
                                         </router-link>
                                   <hr>
                                   <span class="text-secondary">{{ post.created_at }}</span>
@@ -182,7 +176,8 @@
                 </a>        
             </div>
         </div>
-    </div>                   
+         </div>
+                 
       <div class="col-md-12 mb-4">
        <div class="text-center mt-3">
                 <router-link :to="{name: 'campaign'}" class="btn btn-success shadow-sm p-2 mb-3 bg-white text-success rounded">Lihat Semua Artikel <i class="fa fa-long-arrow-alt-right"></i></router-link>
@@ -216,6 +211,9 @@
     import {
         ListLoader
     } from 'vue-content-loader';
+    
+
+
 
     import axios from 'axios';
     import { ref, onMounted } from 'vue';

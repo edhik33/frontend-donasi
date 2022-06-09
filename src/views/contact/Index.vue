@@ -44,15 +44,18 @@
                         <div class="card-body">
                             <h3>KONTAK KAMI</h3>
                             <hr>
-                            <h4 class="mt-3 text-secondary">
+                            <h5 class="mt-3 text-secondary">
                                 <i class="fa fa-map-marker" aria-hidden="true"></i> Alamat: Jl. Nyi Wiji Adhisoro No.3, RT.1/RW.1, Prenggan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55172
-                            </h4>
-                            <h4 class="mt-3  text-secondary" >
+                            </h5>
+                            <h5 class="mt-3  text-secondary" >
                                 <i class="fas fa-phone"></i> 0818-0499-9907
-                            </h4>
-                            <h4 class="mt-3  text-secondary">
+                            </h5>
+                            <h5 class="mt-3  text-secondary">
                                 <i class="fas fa-envelope"></i> sidaq@gmail.com
-                            </h4>
+                            </h5>
+                              <h5 class="mt-3  text-secondary">
+                                <i class="fab fa-youtube"></i> Surgakan Indonesia Dengan Al Quran
+                            </h5>
                         </div>
                     </div>
                 </div>
