@@ -8,74 +8,60 @@
      
 
         <!-- breadcrumb -->
-      <div class="jumbotron shadow-custom rounded-0 mt-3 mb-5">
-    <div class="container">
-        <div class="row mt-3 mb-0">
-            <div class="col-md-8 offset-md-2 mb-0">
-                <div class="text-homepage text-center" style="margin-top: 20px">
-                    <div class="img-circle">
-                    </div>
-                    <h3 class="text-dark font-weight-bold mt-3"> {{ categoryInfo.message }} </h3>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+      
         <!-- end breadcrumb -->
 
-        <div class="container">
-     <div class="row mt-3 mb-0 bg-white shadow p-2 bg-white" style="border-radius: 20px;">
+            
+<div class="container">  
+        <div class="row mt-3 mb-0 bg-white shadow p-2 bg-white" style="border-radius: 20px;">
         <div class="col-md-8 mb-5"></div>
 <div class="container mb-3">
-                <div v-if="campaigns.length > 0" class="row">
-                    <div class="col-md-4" v-for="campaign in campaigns" :key="campaign.id">
-                        <div class="card h-100 shadow-sm border-0 rounded-lg">
-                            <div class="card-img">
-                                <img :src="campaign.image" class="w-100"
-                                    style="height: 200px;object-fit: cover;border-top-left-radius: .3rem;border-top-right-radius: .3rem;">
-                            </div>
-                            <div class="card-body">
-                                <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
-                                    class="text-dark text-decoration-none">
-                                    <h6>{{ campaign.title }}</h6>
-                                </router-link>
-                            </div>
-                            <div class="card-footer bg-white">
 
-                                 <div class="row align-items-left jumbotron-santri-koding">
-                                               <div class="col-12 col-md-6 text-left">
-                                                    <h5 class="font-weight-bolder text-dark">{{ campaign.crowdfunding }}    <img :src="campaign.logo" class="align-items-left" style="width:20px;"></h5> 
-                                                </div>                   
-                                            </div>
+            <div v-if="campaigns.length > 0" class="row">
 
+                <div class="col-md-12" v-for="campaign in campaigns" :key="campaign.id">
+                            <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover" >
+                                 <div class="row mt-3 text-left">
+                        <div class="col-md-12">
+                <h4 class="text-secondary font-weight-bolder">{{ campaign.title }}</h4>
+                <h6>
+                                                    {{ campaign.crowdfunding }}    <img :src="campaign.logo" class="align-items-left" style="width:20px;"></h6> 
+                                                
+                  <div class="progress mt-2 mb-2">
+                                    <div class="progress-bar bg-success rounded-0" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                                    </div>
+                                    
                                 <div class="row align-items-center jumbotron-santri-koding">
                                     <div class="col-6 col-md-6 text-left">
-
-                                          <span style="color:grey"> Terkumpul</span> 
+                                         <span style="color:grey"> Terkumpul</span> 
                                                 <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
                                    </div>
-                                 
-                                  <div class="col-6 col-md-6 text-right">
-                                    <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
-                                            class="text-dark text-decoration-none">
-                                           <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
-                                        </router-link>
-
-                                        </div>
-                                        </div>
-
-
+                                    <div class="col-6 col-md-6 text-right">
+                                         <span style="color:grey">Target Donasi</span>
+                                                                         <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.target_donation) }}</h6> 
+                                 </div>
+                                                   
+                                          </div>
+                                          </div>
+                                          </div>
+                                        
+                                        <router-link :to="{name: 'form', params: {slug: form}}" class="btn btn-success shadow-sm p-2 mb-3 bg-success text-white rounded fixed-bottom mx-auto" style="width:70%;font-size:15px"> Donasi <i class="fa fa-long-arrow-alt-right"></i>  </router-link>
+             
+                           
+                            
                             </div>
+                            
                         </div>
-                    </div>
-                </div>
-
-                <div v-else>
+                        <div v-else>
                     <div class="alert alert-danger">
                         DATA BERITA TERBARU BELUM TERSEDIA !
                     </div>
                 </div>
+                    </div>
+              
+           
+       
+                
 
                 <div class="text-center" v-show="moreExists">
                     <button type="button" class="btn btn-primary btn-md" v-on:click="loadMore"><span class="fa fa-arrow-down"></span> LIHAT LEBIH BANYAK</button>
@@ -83,11 +69,6 @@
 
             </div>
         </div>
-         </div>
-         
-            
-       
-        
         <!-- main content -->
 
         <!-- footer -->

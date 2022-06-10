@@ -5,7 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import axios from 'axios';
 
 //default base URL / EndPoint API
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = "https://donasi.masbosblaster.com";
 
 //define a routes
 const routes = [
@@ -76,6 +76,12 @@ const routes = [
         name: 'detail_campaign',
         component: () => import( /* webpackChunkName: "CampaignShow" */ "@/views/campaign/Show")
     },
+
+    {
+        path: '/search',
+        name: 'search',
+        component: () => import( /* webpackChunkName: "search" */ '@/views/search/Index.vue')
+     },
 
   
     

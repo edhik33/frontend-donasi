@@ -20,10 +20,10 @@
    
 <div v-if="categories.length > 0">
             <div class="container">
-                <div class="row mt-3 bg-white shadow p-3 mb-5 bg-white " style="border-radius: 20px;">
+                <div class="row mt-3 bg-white shadow p-3 mb-5 bg-white " style="border-radius: 17px;">
                      <div class="col-md-12  bg-dark"></div>
 
-                          <div class="col-md-3 col-3 mb-3 text-center " v-for="category in categories" :key="category.id">
+                          <div class="col-md-3 col-3  text-center " v-for="category in categories" :key="category.id">
                               <router-link :to="{name: 'detail_category', params:{slug: category.slug}}">
                                  <img :src="category.image" class="mt-3 rounded-circle bg-success"  style="width: 50px;text-align:center">
                               </router-link>
@@ -51,7 +51,7 @@
 
 <!-- PROGRAM -->
 <div class="container">    
-        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-3 bg-white " style="border-radius: 20px;">
+        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-3 bg-white " style="border-radius: 17px;">
         <div class="col-md-12 mb-5"></div>
 
        <div class="container">
@@ -105,7 +105,7 @@
 </div>
        <div class="col-md-12 mb-4">
        <div class="text-center mt-3">
-                <router-link :to="{name: 'campaign'}" class="btn btn-success shadow-sm p-2 mb-3 bg-white text-success rounded">Lihat Semua Program <i class="fa fa-long-arrow-alt-right"></i></router-link>
+                <router-link :to="{name: 'campaign'}" class="btn btn-success shadow-sm p-2 mb-3 mt-5 bg-white text-success rounded">Lihat Semua Program <i class="fa fa-long-arrow-alt-right"></i></router-link>
        </div>
     </div>
     
@@ -118,7 +118,7 @@
 
 
 <div class="container">    
-        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-3 bg-white " style="border-radius: 20px;">
+        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-3 bg-white " style="border-radius: 17px;">
         <div class="col-md-12 mb-5"></div>
 
        <div class="container">
@@ -157,7 +157,7 @@
                  
       <div class="col-md-12 mb-4">
        <div class="text-center mt-3">
-                <router-link :to="{name: 'campaign'}" class="btn btn-success shadow-sm p-2 mb-3 bg-white text-success rounded">Lihat Semua Artikel <i class="fa fa-long-arrow-alt-right"></i></router-link>
+                <router-link :to="{name: 'campaign'}" class="btn btn-success shadow-sm p-2 mb-3 mt-5 bg-white text-success rounded">Lihat Semua Artikel <i class="fa fa-long-arrow-alt-right"></i></router-link>
        </div>
     </div>
 
