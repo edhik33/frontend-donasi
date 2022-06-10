@@ -21,7 +21,7 @@
         <!-- main content -->
 
 <div class="container">    
-        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-5 bg-white " style="border-radius: 20px;">
+        <div class="row mt-5 mb-0 bg-white shadow p-2 bg-white " style="border-radius: 20px;">
         <div class="col-md-12 mb-5"></div>
 
 
