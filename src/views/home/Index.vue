@@ -4,44 +4,17 @@
         <Header />
         <!-- end header -->
 
-
         <!-- main content -->
-        <div class="jumbotron" ></div>
+        <div class="jumbotron" >    </div>
             <div class="container">
-                <div class="row mt-20 mb-0 bg-white shadow p-3 mb-5 bg-white " style="border-radius: 20px;">
-                    <div class="col-md-12 mb-5 bg-dark"></div>
-
-                   <div class="col-md-7 mt-5">
-                        <h2 class="font-weight-bold">Mensurgakan Indonesia dengan Al-Qur’an!</h2>
-                        <p class="lead mt-5" style="line-height: 35px;">Selamat datang di gerakan meng-Qur’an-kan Indonesia. Indonesia butuh bantuan Anda. Bergabunglah bersama kami untuk bersama-sama menyelamatkan Indonesia di dunia dan akhirat.</p>
-                        <hr class="my-4">
-                        <form action="" method="GET" class="card-search card-sm" style="margin-top: 20px">
-                            <div class="card-body row no-gutters align-items-center mb-5" style="padding: .5rem">
-                                <div class="col-auto">
-
-                        </div>
-                        <!--end of col-->
-                        <div class="col">
-                            <input class="form-control form-control-lg form-control-borderless" name="q" type="search" placeholder="Ketik Pembangunan Pondok">
-                        </div>
-                        <!--end of col-->
-                        <div class="col-auto">
-                            <div class="search" style="padding-right: 10px;margin-top: 6px;">
-                                <i class="fa fa-search fa-lg"></i>
-                            </div>
-                        </div>
-                        <!--end of col-->
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-5 d-none d-md-block rounded d-lg-block text-right">
-                <img src="/assets/1.png" class="w-100 text-right" style="height:364px">
-            </div>
+                <div class="row mb-0 bg-white shadow p-3 mb-5 bg-white " style="border-radius: 20px;">
+            
+                   <div class="col-md-12">  
+              <Slider />
+    
         </div>
         </div>
-  
-
-         
+        </div>
                <!-- category section -->
 
    
@@ -206,6 +179,7 @@
            
         <!-- footer -->
         <Footer />
+
         <!-- end footer -->
         </div>
 
@@ -222,17 +196,25 @@
 
     import axios from 'axios';
     import { ref, onMounted } from 'vue';
+
+    
     import Header from "@/components/Header";
+    import Slider from "@/components/Slider";
     import Footer from "@/components/Footer";
+     
+ 
+    
     
 
     export default {
         name: 'HomeComponent',
 
         components: {
+            Slider,
             ListLoader,
             Header,
-            Footer
+            Footer,
+         
         },
         
         setup() {
@@ -241,7 +223,7 @@
 
             const campaigns = ref([]);
             const posts = ref([]);
-            const sliders = ref([]);
+          
            
 
             //hook onMounted
@@ -263,21 +245,19 @@
                         posts.value = response.data.data.data;
                     })
 
-                       axios.get('/api/slider')
-                    .then(response => {
-                        sliders.value = response.data.data.data;
-                    })
+                   
 
+                    
 
 
             });
 
             return {
-                sliders,
                 posts,
                 campaigns,
                 categories,
                 categories_loader,
+          
          
             }
         }
