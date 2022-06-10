@@ -9,10 +9,10 @@
             <div class="container">
                 <div class="row mb-0 bg-white shadow p-3 mb-5 bg-white " style="border-radius: 20px;">
             
-                   <div class="col-md-12">  
+                
               <Slider />
     
-        </div>
+     
         </div>
         </div>
                <!-- category section -->

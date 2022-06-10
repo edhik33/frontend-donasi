@@ -9,7 +9,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-              <ul class="navbar-nav">
+      <ul class="navbar-nav">
         <!-- Megamenu-->
 
           <li class="nav-item ">
@@ -29,10 +29,9 @@
          <router-link :to="{name: 'contact'}"   href="" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-uppercase">KONTAK</router-link>
         </li>
    
-     
     </ul>
-   
-        </div>   
+ 
+     </div>
      </div>
  </nav>
 
@@ -40,7 +39,9 @@
 </template>
 
 <script>
+
  export default {
   name : 'HeaderComponent'
  }
 </script>
+
