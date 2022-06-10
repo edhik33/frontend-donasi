@@ -3,8 +3,7 @@
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item" v-for="(slider, id) in sliders" :class="{ active: id==0 }" :key='slider.id'>
-       <img :src="slider.image" class="w-100"
-                        style="height:400px;object-fit:cover">
+       <img :src="slider.image"  class="w-100 rounded lazy" style="object-fit: cover">
     </div>
     </div>
  
