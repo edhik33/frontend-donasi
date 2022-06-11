@@ -5,7 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import axios from 'axios';
 
 //default base URL / EndPoint API
-axios.defaults.baseURL = "https://donasi.masbosblaster.com";
+axios.defaults.baseURL = "http://localhost:8000";
 
 //define a routes
 const routes = [

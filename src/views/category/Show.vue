@@ -4,11 +4,8 @@
         <Header />
         <!-- end header -->
 
-        <!-- main content -->
-     
-
         <!-- breadcrumb -->
-      <div class="jumbotron shadow-custom rounded-0 mt-3 mb-5">
+<div class="jumbotron shadow-custom rounded-0 mt-3 mb-5">
     <div class="container">
         <div class="row mt-3 mb-0">
             <div class="col-md-8 offset-md-2 mb-0">
@@ -16,7 +13,6 @@
                     <div class="img-circle">
                     </div>
                     <h3 class="text-dark font-weight-bold mt-3"> {{ categoryInfo.message }} </h3>
-                    
                 </div>
             </div>
         </div>
@@ -24,16 +20,18 @@
 </div>
         <!-- end breadcrumb -->
 
-        <div class="container">
+        <!-- main content -->
+
+<div class="container">
      <div class="row mt-3 mb-0 bg-white shadow p-2 bg-white" style="border-radius: 20px;">
         <div class="col-md-8 mb-5"></div>
-<div class="container mb-3">
+            <div class="container mb-3">
+
                 <div v-if="campaigns.length > 0" class="row">
                     <div class="col-md-4" v-for="campaign in campaigns" :key="campaign.id">
                         <div class="card h-100 shadow-sm border-0 rounded-lg">
                             <div class="card-img">
-                                <img :src="campaign.image" class="w-100"
-                                    style="height: 200px;object-fit: cover;border-top-left-radius: .3rem;border-top-right-radius: .3rem;">
+                                <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
                             </div>
                             <div class="card-body">
                                 <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
@@ -44,28 +42,26 @@
                             <div class="card-footer bg-white">
 
                                  <div class="row align-items-left jumbotron-santri-koding">
-                                               <div class="col-12 col-md-6 text-left">
-                                                    <h5 class="font-weight-bolder text-dark">{{ campaign.crowdfunding }}    <img :src="campaign.logo" class="align-items-left" style="width:20px;"></h5> 
-                                                </div>                   
-                                            </div>
+                                    <div class="col-12 col-md-6 text-left">
+                                        <h5 class="font-weight-bolder text-dark">{{ campaign.crowdfunding }}    <img :src="campaign.logo" class="align-items-left" style="width:20px;"></h5> 
+                                    </div>                   
+                                 </div>
 
                                 <div class="row align-items-center jumbotron-santri-koding">
                                     <div class="col-6 col-md-6 text-left">
-
-                                          <span style="color:grey"> Terkumpul</span> 
-                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
-                                   </div>
+                                        <span style="color:grey"> Terkumpul</span> 
+                                        <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
+                                </div>
                                  
-                                  <div class="col-6 col-md-6 text-right">
-                                    <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
-                                            class="text-dark text-decoration-none">
-                                           <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
-                                        </router-link>
+                                <div class="col-6 col-md-6 text-right">
+                                    <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}" class="text-dark text-decoration-none">
+                                    <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
+                                    </router-link>
 
-                                        </div>
-                                        </div>
+                                    
+                                </div>
 
-
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -83,11 +79,8 @@
 
             </div>
         </div>
-         </div>
-         
-            
-       
-        
+    </div>
+
         <!-- main content -->
 
         <!-- footer -->
@@ -97,16 +90,10 @@
 </template>
 
 <script>
-     //import axios
     import axios from 'axios';
-
-    //import hook watch from vue
     import { ref, onMounted, watch } from 'vue';
-
-    //import hook useRoute
     import { useRoute } from 'vue-router';
 
-    //import component
     import Header from "@/components/Header";
     import Footer from "@/components/Footer";
 
@@ -126,71 +113,49 @@
             let moreExists      = ref(false);
             let nextPage        = ref(0);
 
-            //define route
             const route = useRoute();
 
-            //define method fetchDataPostsByCategory
             const fetchDataCampaignsByCategory = () => {
                 axios.get(`/api/category/${route.params.slug}`)
                     .then(response => {
                         
-                        //assign data to state categoryInfo
+                    
                         categoryInfo.value = response.data.response
 
-                        //assign data to state posts
                         campaigns.value = response.data.data.data
 
                         if (response.data.data.current_page < response.data.data.last_page) {
                             
-                            //set state moreExists to true
                             moreExists.value = true
 
-                            //set state nextPage to next page
                             nextPage.value = response.data.data.current_page + 1
-                        } else {
-
-                            //set state moreExists to false
+                             } else {
                             moreExists.value = false
                         }
 
                     })
             }
 
-            //define method loadMore
             const loadMore = () => {
                 axios.get(`/api/category/${route.params.slug}?page=${nextPage.value}`)
                     .then(response => {
                         if (response.data.data.current_page < response.data.data.last_page) {
-                            
-                            //set state moreExists to true
                             moreExists.value = true
-
-                            //set state nextPage to next page
                             nextPage.value = response.data.data.current_page + 1
                         } else {
-
-                            //set state moreExists to false
                             moreExists.value = false
                         }
 
-                        //push data to state posts
                         response.data.data.data.forEach(data => {
                             campaigns.value.push(data)
                         })
                     })
             }
 
-            //run hook onMounted
             onMounted(() => {
-
-                //run method fetchDataPostsByCategory
                 fetchDataCampaignsByCategory()
             })
-
-            //watch route
             watch(() => route.params.slug, () => {
-                    
-                    //fetchDataPostsByCategory
                     fetchDataCampaignsByCategory();
                 }
             )

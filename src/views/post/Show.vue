@@ -5,47 +5,56 @@
         <!-- end header -->
 
         <!-- main content -->
-
-<div class="jumbotron shadow-custom rounded-0 mt-3 mb-5">
-    <div class="container">
-        <div class="row mt-3 mb-0">
-            <div class="col-md-8 offset-md-2 mb-0">
-                <div class="text-homepage text-center" style="margin-top: 20px">
-                    <div class="img-circle">
+<div class="container mt-100">
+    <div class="row justify-content-center">
+        <div class="col-md-8 mb-4">
+            <div class="card border-0 rounded shadow-custom">
+                <div class="card-body">
+                    <h4 class="font-weight-bold" style="margin-top: 0px">{{ post.title }}</h4>
+                     <hr>
+                      <div class="author">
+                        <div class="row">
+                            <div class="col-md-1 col-2"> 
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-dark font-weight-bold mt-3"> Berita </h3>
-                </div>
+                    <img :src="post.image" class="w-100 rounded lazy" style="object-fit: cover">
+
+                  <hr>
+                            <h6 class="mt-3 text-secondary" v-html="post.content"></h6>
+                    </div>
+
             </div>
         </div>
+        <div class="col-md-4 mb-4">
+            <div class="card rounded border-0 shadow-custom mb-4">
+                <div class="card-body">
+                    <h5 class="font-weight-600" style="margin-top: 0px"> <i class="fa fa-book"></i> Artikel Terkait</h5>
+                    <hr>
+                    <div class="row">
+                                                    <div class="col-md-12" v-for="post in posts" :key="post.id">
+                                <div class="article-related">
+                                   <router-link :to="{name: 'detail_post', params: {slug: post.slug}}">
+                                  <img :src="post.image"  class="w-100 rounded lazy" style="object-fit: cover"></router-link>
+                                    <p class="mt-2" style="font-size: 12px;color: #847e7e">
+                                        Oleh <strong>Quranesia</strong> {{ post.created_at }}
+                                    </p>
+                                      <hr>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                           
+                            </div>
+                                               
+                                                   
+                     </div>
+                </div>
+            </div>
+
+                   </div>
     </div>
 </div>
-      
-<div class="container">  
-        <div class="row mt-3 mb-0 bg-white shadow p-2 mb-5 bg-white " style="border-radius: 20px;">
-        <div class="col-md-8 mb-5"></div>
-<div class="container mb-3">
 
-            <div class="row">
-
-                <div class="col-md-12">
-                 <div class="card-body">
-                                <img :src="post.image" class="w-100 rounded lazy" style="object-fit: cover" >
-                                         <div class="row mt-3 text-left">
-                        <div class="col-md-12">
-
-                      <h4 class="text-secondary font-weight-bolder mt-3">{{ post.title }}</h4>
-                                  <h5 class="mt-3 text-secondary" v-html="post.content"></h5>
-                            </div>
-                        </div>  
-                </div>
-                </div>
-
-
-           </div>
-</div>
-
-        </div>
-   </div>
         <!-- main content -->
 
         <!-- footer -->
