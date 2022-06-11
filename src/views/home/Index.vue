@@ -154,7 +154,10 @@
                  
       <div class="col-md-12 mb-4">
        <div class="text-center mt-3">
+
                 <router-link :to="{name: 'campaign'}" class="btn btn-success shadow-sm p-2 mb-1 mt-1 bg-white text-success rounded">Lihat Semua Artikel <i class="fa fa-long-arrow-alt-right"></i></router-link>
+             
+
        </div>
     </div>
 

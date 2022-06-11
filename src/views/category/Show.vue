@@ -29,9 +29,12 @@
 
                 <div v-if="campaigns.length > 0" class="row">
                     <div class="col-md-4" v-for="campaign in campaigns" :key="campaign.id">
-                        <div class="card h-100 shadow-sm border-0 rounded-lg">
+                        <div class="card h-100  shadow p-2" style="border-radius:12px">
                             <div class="card-img">
+
                                 <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
+
+                                <img :src="campaign.image"  class="w-100 rounded lazy" style="object-fit: cover">
                             </div>
                             <div class="card-body">
                                 <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"

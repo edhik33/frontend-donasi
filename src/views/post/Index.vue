@@ -21,14 +21,14 @@
         <!-- main content -->
 
 <div class="container">    
-        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-5 bg-white " style="border-radius: 20px;">
+        <div class="row mt-5 mb-0 bg-white shadow p-2 bg-white " style="border-radius: 20px;">
         <div class="col-md-12 mb-5"></div>
 
 
 <div class="container mt-3">
     <div class="row justify-content-center">
                 <div class="col-12 col-md-4 col-lg-4 mb-5" v-for="post in posts" :key="post.id">
-            <div class="card border-0 mb-3 h-80 shadow p-3 mb-5 bg-white rounded">
+            <div class="card border-0 mb-3 h-80 shadow p-3 bg-white rounded">
                  <img :src="post.image" class="card-img-top lazy" style="width: 100%;height: 200px;object-fit:cover">
                 <div class="card-body" style="width: 100%;height: 80px;">
                     <div class="topic">
