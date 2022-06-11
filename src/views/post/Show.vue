@@ -18,40 +18,36 @@
                             </div>
                         </div>
                     </div>
-                    <img :src="post.image" class="w-100 rounded lazy" style="object-fit: cover">
-
+                 <img :src="post.image" class="w-100 rounded lazy" style="object-fit: cover">
                   <hr>
-                            <h6 class="mt-3 text-secondary" v-html="post.content"></h6>
+                    <h6 class="mt-3 text-secondary" v-html="post.content"></h6>
                     </div>
-
+                </div>
             </div>
-        </div>
+
         <div class="col-md-4 mb-4">
             <div class="card rounded border-0 shadow-custom mb-4">
                 <div class="card-body">
                     <h5 class="font-weight-600" style="margin-top: 0px"> <i class="fa fa-book"></i> Artikel Terkait</h5>
                     <hr>
-                    <div class="row">
-                                                    <div class="col-md-12" v-for="post in posts" :key="post.id">
+                        <div class="row">
+                            <div class="col-md-12" v-for="post in posts" :key="post.id">
                                 <div class="article-related">
                                    <router-link :to="{name: 'detail_post', params: {slug: post.slug}}">
-                                  <img :src="post.image"  class="w-100 rounded lazy" style="object-fit: cover"></router-link>
+                                       <img :src="post.image"  class="w-100 rounded lazy" style="object-fit: cover">
+                                    </router-link>
                                     <p class="mt-2" style="font-size: 12px;color: #847e7e">
-                                        Oleh <strong>Quranesia</strong> {{ post.created_at }}
-                                    </p>
+                                        Oleh <strong>Quranesia</strong> {{ post.created_at }}</p>
                                       <hr>
                                 </div>
                             </div>
+
                             <div class="col-md-12">
-                           
-                            </div>
-                                               
-                                                   
+                        </div>                       
                      </div>
                 </div>
             </div>
-
-                   </div>
+        </div>
     </div>
 </div>
 
