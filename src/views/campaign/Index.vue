@@ -65,6 +65,9 @@
                                         </router-link>
                                       
                                   </div>
+
+        
+
                             </div>
                     
                     </div>
@@ -73,11 +76,18 @@
 
         </div>
     </div>
-     
+    
+                            <div class="text-center" v-show="moreExists">
+                    <button type="button" class="btn btn-success btn-md mb-3" v-on:click="loadMore"><span class="fa fa-arrow-down"></span> LIHAT LEBIH BANYAK</button>
+                </div>
+
+   
   
         </div>
         </div>
         </div>
+
+      
        
 </div>
         <!-- main content -->
@@ -90,7 +100,7 @@
 
 <script>
     //import content loader
-   
+
     //import axios
     import axios from 'axios';
 
@@ -102,7 +112,7 @@
     import Footer from "@/components/Footer";
 
     export default {
-        name: 'CampaignCmponent',
+        name: 'campaignCmponent',
 
         components: {
             //loader component
@@ -115,11 +125,8 @@
         setup() {
             
             //define state
+            const campaigns = ref([]);
         
-              const campaigns = ref([]);
-            
-            
-
             //define state moreExists
             let moreExists = ref(false);
             let nextPage = ref(0);
@@ -129,7 +136,7 @@
                 axios.get('/api/campaign')
                     .then(response => {
 
-                        //assign response to state posts
+                        //assign response to state campaigns
                         campaigns.value = response.data.data.data
 
                         //check if response has next page
@@ -139,7 +146,7 @@
                             moreExists.value = true
 
                             //increment nextPage
-                            nextPage.value = response.data.data.current_page + 1
+                            nextPage.value = response.data.data.current_page + 1;
                         } else {
 
                             //set state moreExists to false
@@ -161,21 +168,22 @@
                                 nextPage = response.data.data.current_page + 1
                         } else {
 
-                                //set state moreExists to false
-                                this.moreExists = false
-                        }
-                        
-                        //assign response to state posts
-                        response.data.data.data.forEach(data => {
+                               response.data.data.data.forEach(data => {
                             campaigns.value.push(data)
                         })
+                          //set state moreExists to false
+                            moreExists.value = false
+                        }
+                        
+                        //assign response to state campaigns
+                        
                     })
             };
 
             //run hook onMounted
             onMounted(() => {
 
-                //fetch data posts
+                //fetch data campaigns
                 fetchDataCampaigns()
             });
 

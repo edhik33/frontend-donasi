@@ -68,7 +68,7 @@
 
         <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
             <div class="mt-3" style="height: 40px;background: #fff;">
-                <span class=" text-dark" style="font-size: 15px;">{{ campaign.title }}</span>
+                <span class=" text-dark text-center" style="font-size: 15px;">{{ campaign.title }}</span>
             </div>
 
         <div class="progress mt-2 mb-2">
@@ -155,8 +155,9 @@
       <div class="col-md-12 mb-4">
        <div class="text-center mt-3">
 
-                <router-link :to="{name: 'campaign'}" class="btn btn-success shadow-sm p-2 mb-1 mt-1 bg-white text-success rounded">Lihat Semua Artikel <i class="fa fa-long-arrow-alt-right"></i></router-link>
-             
+                <router-link :to="{name: 'post'}" class="btn btn-success shadow-sm p-2 mb-1 mt-1 bg-white text-success rounded">Lihat Semua Artikel <i class="fa fa-long-arrow-alt-right"></i></router-link>
+
+                
 
        </div>
     </div>
@@ -199,6 +200,8 @@
             const categories_loader = ref(1);
             const campaigns = ref([]);
             const posts = ref([]);
+
+            
           
             onMounted(() => {
 

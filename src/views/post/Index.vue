@@ -21,7 +21,7 @@
         <!-- main content -->
 
 <div class="container">    
-        <div class="row mt-5 mb-0 bg-white shadow p-2 bg-white " style="border-radius: 20px;">
+        <div class="row mt-5 mb-5 bg-white shadow p-2 bg-white " style="border-radius: 20px;">
         <div class="col-md-12 mb-5"></div>
 
 
@@ -35,14 +35,17 @@
                                                 <a href="https://santrikoding.com/tag/laravel" class="badge badge-danger shadow-custom">{{ post.created_at }}</a>
                                              
                                             </div>
-                    <a class="link-article text-decoration-none" href="https://santrikoding.com/tips-mengatasi-error-mengirim-email-menggunakan-smtp-gmail-di-laravel">
-                        <h6 class="card-title font-weight-bold text-dark" style="line-height: 30px;">{{post.title}}</h6>
-                    </a>
+                   <router-link :to="{name: 'detail_post', params: {slug: post.slug}}"
+                                            class="text-dark text-decoration-none">
+                                             <h5 class="text-secondary font-weight-bolder">{{ post.title }}</h5>
+                                        </router-link>
                 </div>
 
             </div>
         </div>
-              
+                <div class="text-center" v-show="moreExists">
+                    <button type="button" class="btn btn-success btn-md mb-3" v-on:click="loadMore"><span class="fa fa-arrow-down"></span> LIHAT LEBIH BANYAK</button>
+                </div>
   
         </div>
         </div>
@@ -58,7 +61,7 @@
 
 <script>
     //import content loader
-   
+
     //import axios
     import axios from 'axios';
 
@@ -70,7 +73,7 @@
     import Footer from "@/components/Footer";
 
     export default {
-        name: 'PostCmponent',
+        name: 'postCmponent',
 
         components: {
             //loader component
@@ -84,14 +87,13 @@
             
             //define state
             const posts = ref([]);
-            const posts_loader = ref(6);
-
+        
             //define state moreExists
             let moreExists = ref(false);
             let nextPage = ref(0);
 
             //define method
-            const fetchDataPosts = () => {
+            const fetchDataposts = () => {
                 axios.get('/api/post')
                     .then(response => {
 
@@ -105,7 +107,7 @@
                             moreExists.value = true
 
                             //increment nextPage
-                            nextPage.value = response.data.data.current_page + 1
+                            nextPage.value = response.data.data.current_page + 1;
                         } else {
 
                             //set state moreExists to false
@@ -127,14 +129,15 @@
                                 nextPage = response.data.data.current_page + 1
                         } else {
 
-                                //set state moreExists to false
-                                this.moreExists = false
+                               response.data.data.data.forEach(data => {
+                            posts.value.push(data)
+                        })
+                          //set state moreExists to false
+                            moreExists.value = false
                         }
                         
                         //assign response to state posts
-                        response.data.data.data.forEach(data => {
-                            posts.value.push(data)
-                        })
+                        
                     })
             };
 
@@ -142,13 +145,12 @@
             onMounted(() => {
 
                 //fetch data posts
-                fetchDataPosts()
+                fetchDataposts()
             });
 
             //return data
             return {
                 posts,
-                posts_loader,
                 moreExists,
                 nextPage,
                 loadMore
