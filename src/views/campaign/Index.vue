@@ -21,15 +21,15 @@
         <!-- main content -->
 
 <div class="container">    
-        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-5 bg-white " style="border-radius: 20px;">
+        <div class="row mt-5 mb-0 bg-white shadow-sm  mb-3 bg-body rounded" style="border-radius: 20px;">
     
 
 
 <div class="container mt-5">
     <div class="row justify-content-center">
-                <div class="col-12 col-md-4 col-lg-4 mb-5" v-for="campaign in campaigns" :key="campaign.id">
+                <div class="col-12 col-md-4 col-lg-4 mb-3" v-for="campaign in campaigns" :key="campaign.id">
      
-                <div class="card h-80 shadow p-2" style="border-radius:12px">
+                <div class="card h-80 shadow p-3" style="border-radius:12px">
                          <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
                              <div class="mt-3 " style="height: 40px;background: #fff;">
                                 <span class=" text-dark" style="font-size: 15px;">{{ campaign.title }}</span>
