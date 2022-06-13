@@ -138,7 +138,7 @@
                                 <div class="card-body p-3">
                                      <router-link :to="{name: 'detail_post', params: {slug: post.slug}}"
                                             class="text-dark text-decoration-none">
-                                             <h5 class="text-secondary font-weight-bolder">{{ post.title }}</h5>
+                                              <span class=" text-secondary text-center" style="font-size: 15px;">{{ post.title }}</span>
                                         </router-link>
                                   <hr>
                                   <span class="text-secondary">{{ post.created_at }}</span>
@@ -197,7 +197,7 @@
                                   
                                   <hr>
                                     <div class="text-dark text-decoration-none">
-                                             <h5 class="text-secondary font-weight-bolder">{{ video.title }}</h5>
+                                             <span class=" text-secondary text-center" style="font-size: 15px;">{{ video.title }}</span>
                                         </div>
                                 
                                 </div>
