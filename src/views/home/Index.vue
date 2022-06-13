@@ -135,7 +135,7 @@
                             </div>
                             
                             <div class="col-md-8">
-                                <div class="card-body p-3">
+                                <div class="card-body">
                                      <router-link :to="{name: 'detail_post', params: {slug: post.slug}}"
                                             class="text-dark text-decoration-none">
                                               <span class=" text-secondary text-center" style="font-size: 15px;">{{ post.title }}</span>
@@ -193,7 +193,7 @@
                             </div>
                             
                             <div class="col-md-8">
-                                <div class="card-body p-3">
+                                <div class="card-body">
                                   
                                   <hr>
                                     <div class="text-dark text-decoration-none">
