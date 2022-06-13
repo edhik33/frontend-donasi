@@ -15,6 +15,11 @@ const routes = [
         component: () => import( /* webpackChunkName: "Home" */ "@/views/home/Index"),
     },
     {
+        path: '/video',
+        name: 'video',
+        component: () => import( /* webpackChunkName: "VideoIndex" */ "@/views/video/Index")
+    },
+    {
         path: '/post',
         name: 'post',
         component: () => import( /* webpackChunkName: "PostIndex" */ "@/views/post/Index"),

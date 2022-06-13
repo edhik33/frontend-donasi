@@ -20,6 +20,10 @@
         <router-link :to="{name: 'post'}" href="" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-uppercase">BERITA</router-link>
         </li>
 
+          <li class="nav-item ">
+        <router-link :to="{name: 'video'}" href="" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-uppercase">KEGIATAN</router-link>
+        </li>
+
           <li class="nav-item " >
          <router-link :to="{name: 'about'}" href="" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-uppercase">ABOUT</router-link>
         </li>

@@ -161,8 +161,66 @@
 
        </div>
     </div>
+</div>
+<!-- END POST PROGRAM --> 
 
-<!-- END POST PROGRAM -->  
+
+
+<!-- POST -->
+
+<div class="container">    
+    <div class="row mb-0 bg-white shadow p-2 mb-3 bg-white " style="border-radius: 17px;">
+        <div class="col-md-12 mb-3"></div>
+            <div class="container">
+                <div class="row mb-3 text-left">
+                        <div class="col-md-12">
+                        <h4>Kegiatan</h4>
+                        </div>
+                </div>
+            </div>
+
+        <div class="col-12 col-md-4 col-lg-4 mb-4"  v-for="video in videos" :key="video.id">
+                <div class="text-decoration-none text-dark">
+                    <div class="card  h-100 shadow p-3 mb-3 bg-white rounded">
+                        <div class="row no-gutters p-2">
+
+                            <div class="col-md-12">
+                                   <iframe
+                                            style="width:100%;height:200px;border-top-left-radius:.3rem;border-top-right-radius:.3rem"
+                                            :src="video.embed" frameborder="0"
+                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                            </div>
+                            
+                            <div class="col-md-8">
+                                <div class="card-body p-3">
+                                  
+                                  <hr>
+                                    <div class="text-dark text-decoration-none">
+                                             <h5 class="text-secondary font-weight-bolder">{{ video.title }}</h5>
+                                        </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </div>
+
+     
+                 
+      <div class="col-md-12 mb-4">
+       <div class="text-center mt-3">
+
+                <router-link :to="{name: 'video'}" class="btn btn-success shadow-sm p-2 mb-1 mt-1 bg-white text-success rounded">Lihat Semua Video <i class="fa fa-long-arrow-alt-right"></i></router-link>
+
+                
+
+       </div>
+    </div>
+
+<!-- END POST PROGRAM -->
         <!-- footer -->
         <Footer />
 
@@ -200,6 +258,7 @@
             const categories_loader = ref(1);
             const campaigns = ref([]);
             const posts = ref([]);
+            const videos = ref([]);
 
             
           
@@ -219,9 +278,15 @@
                     .then(response => {
                         posts.value = response.data.data.data;
                     })
+
+                    axios.get('/api/video')
+                    .then(response => {
+                        videos.value = response.data.data.data;
+                    })
             });
 
             return {
+                videos,
                 posts,
                 campaigns,
                 categories,
