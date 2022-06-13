@@ -28,7 +28,7 @@
         <div class="col-md-8 mb-4">
             <div class="card border-0 rounded shadow-custom" style="border-radius: 20px">
                 <div class="card-body">
-                    <h4 class="font-weight-bold" style="margin-top: 0px">{{ campaign.title }}</h4>
+                    <h4 class="font-weight-bold text-center" style="margin-top: 0px">{{ campaign.title }}</h4>
                      <hr>
                       <div class="author">
                         <div class="row">
