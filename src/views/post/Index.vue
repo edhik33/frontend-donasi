@@ -37,7 +37,7 @@
                                             </div>
                    <router-link :to="{name: 'detail_post', params: {slug: post.slug}}"
                                             class="text-dark text-decoration-none">
-                                             <h5 class="text-secondary font-weight-bolder">{{ post.title }}</h5>
+                                             <span class="text-secondary font-weight-bolder">{{ post.title }}</span>
                                         </router-link>
                 </div>
 
