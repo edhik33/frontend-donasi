@@ -21,8 +21,8 @@
         <!-- main content -->
 
 <div class="container">    
-        <div class="row mt-5 mb-5 bg-white shadow-sm p-3 mb-5 bg-body rounded " style="border-radius: 20px;">
-        <div class="col-md-12 mb-5"></div>
+        <div class="row mt-5 mb-5 bg-white shadow-sm mb-5 bg-body rounded " style="border-radius: 20px;">
+        <div class="col-md-12 mb-3"></div>
 
 
 <div class="container mt-3">

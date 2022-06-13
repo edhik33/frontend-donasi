@@ -114,7 +114,7 @@
 <!-- POST -->
 
 <div class="container">    
-    <div class="row mb-0 bg-white shadow-sm mb-5 bg-body rounded" style="border-radius: 17px;">
+    <div class="row mb-0 bg-white shadow-sm mb-3 bg-body rounded" style="border-radius: 17px;">
         <div class="col-md-12 mb-3"></div>
             <div class="container">
                 <div class="row mb-3 text-left">
@@ -124,7 +124,7 @@
                 </div>
             </div>
 
-        <div class="col-12 col-md-4 col-lg-4 mb-3"  v-for="post in posts" :key="post.id">
+        <div class="col-12 col-md-4 col-lg-4 mb-4"  v-for="post in posts" :key="post.id">
                 <a href="" class="text-decoration-none text-dark">
                     <div class="card  h-100 shadow p-3 bg-white rounded">
                         <div class="row no-gutters">
@@ -152,7 +152,7 @@
 
      
                  
-      <div class="col-md-12 mb-4">
+      <div class="col-md-12 mb-3">
        <div class="text-center mt-3">
 
                 <router-link :to="{name: 'post'}" class="btn btn-success shadow-sm p-2 mb-1 mt-1 bg-white text-success rounded">Lihat Semua Artikel <i class="fa fa-long-arrow-alt-right"></i></router-link>
@@ -169,7 +169,7 @@
 <!-- POST -->
 
 <div class="container">    
-    <div class="row mb-0 bg-white shadow-sm  mb-5 bg-body rounded " style="border-radius: 17px;">
+    <div class="row mb-0 bg-white shadow-sm  mb-3 bg-body rounded " style="border-radius: 17px;">
         <div class="col-md-12 mb-3"></div>
             <div class="container">
                 <div class="row mb-3 text-left">
@@ -179,7 +179,7 @@
                 </div>
             </div>
 
-        <div class="col-12 col-md-4 col-lg-4 mb-3"  v-for="video in videos" :key="video.id">
+        <div class="col-12 col-md-4 col-lg-4 mb-4"  v-for="video in videos" :key="video.id">
                 <div class="text-decoration-none text-dark">
                     <div class="card  h-100 shadow p-3  bg-white rounded">
                         <div class="row no-gutters">
@@ -210,7 +210,7 @@
 
      
                  
-      <div class="col-md-12 mb-4">
+      <div class="col-md-12 mb-3">
        <div class="text-center mt-3">
 
                 <router-link :to="{name: 'video'}" class="btn btn-success shadow-sm p-2 mb-1 mt-1 bg-white text-success rounded">Lihat Semua Video <i class="fa fa-long-arrow-alt-right"></i></router-link>
