@@ -21,7 +21,7 @@
    
 <div v-if="categories.length > 0">
     <div class="container">
-        <div class="row mt-3 bg-white shadow-sm p-3 mb-3 bg-body rounded " style="border-radius: 17px;">
+        <div class="row mt-3 bg-white shadow-sm mb-3 bg-body rounded " style="border-radius: 17px;">
             <div class="col-md-12  bg-dark"></div>
 
                 <div class="col-md-3 col-3  text-center " v-for="category in categories" :key="category.id">
@@ -52,7 +52,7 @@
 
 <!-- PROGRAM -->
 <div class="container">    
-        <div class="row mt-3 mb-0 bg-white shadow-sm p-3 mb-3 bg-body rounded " style="border-radius: 17px;">
+        <div class="row mt-3 mb-0 bg-white shadow-sm  mb-3 bg-body rounded " style="border-radius: 17px;">
         <div class="col-md-12 mb-3"></div>
 
         <div class="container">
@@ -114,7 +114,7 @@
 <!-- POST -->
 
 <div class="container">    
-    <div class="row mb-0 bg-white shadow-sm p-3 mb-5 bg-body rounded" style="border-radius: 17px;">
+    <div class="row mb-0 bg-white shadow-sm mb-5 bg-body rounded" style="border-radius: 17px;">
         <div class="col-md-12 mb-3"></div>
             <div class="container">
                 <div class="row mb-3 text-left">
@@ -169,7 +169,7 @@
 <!-- POST -->
 
 <div class="container">    
-    <div class="row mb-0 bg-white shadow-sm p-3 mb-5 bg-body rounded " style="border-radius: 17px;">
+    <div class="row mb-0 bg-white shadow-sm  mb-5 bg-body rounded " style="border-radius: 17px;">
         <div class="col-md-12 mb-3"></div>
             <div class="container">
                 <div class="row mb-3 text-left">
