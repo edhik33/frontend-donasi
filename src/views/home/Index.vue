@@ -10,7 +10,7 @@
             <!-- Slider -->
 <div class="jumbotron" ></div>
     <div class="container">
-    <div class="row mb-0 bg-white shadow p-3 mb-5 bg-white " style="border-radius: 20px;">
+    <div class="row mb-0 bg-white shadow p-3 mb-2 bg-white " style="border-radius: 20px;">
         <Slider />
     </div>
 </div>
@@ -21,7 +21,7 @@
    
 <div v-if="categories.length > 0">
     <div class="container">
-        <div class="row mt-3 bg-white shadow p-3 mb-5 bg-white " style="border-radius: 17px;">
+        <div class="row mt-3 bg-white shadow p-3 mb-2 bg-white " style="border-radius: 17px;">
             <div class="col-md-12  bg-dark"></div>
 
                 <div class="col-md-3 col-3  text-center " v-for="category in categories" :key="category.id">
@@ -52,7 +52,7 @@
 
 <!-- PROGRAM -->
 <div class="container">    
-        <div class="row mt-5 mb-0 bg-white shadow p-2 mb-3 bg-white " style="border-radius: 17px;">
+        <div class="row mt-3 mb-0 bg-white  shadow-sm p-3 mb-2 bg-body rounded" style="border-radius: 17px;">
         <div class="col-md-12 mb-3"></div>
 
         <div class="container">
@@ -114,7 +114,7 @@
 <!-- POST -->
 
 <div class="container">    
-    <div class="row mb-0 bg-white shadow p-2 mb-3 bg-white " style="border-radius: 17px;">
+    <div class="row mb-0  bg-white  shadow-sm p-3 mb-2 bg-body rounded" style="border-radius: 17px;">
         <div class="col-md-12 mb-3"></div>
             <div class="container">
                 <div class="row mb-3 text-left">
@@ -126,16 +126,15 @@
 
         <div class="col-12 col-md-4 col-lg-4 mb-4"  v-for="post in posts" :key="post.id">
                 <a href="" class="text-decoration-none text-dark">
-                    <div class="card  h-100 shadow p-3 mb-3 bg-white rounded">
-                        <div class="row no-gutters p-2">
+                    <div class="card  h-100 shadow p-3 bg-white rounded">
+                        <div class="row no-gutters">
 
                             <div class="col-md-12">
                                   <router-link :to="{name: 'detail_post', params: {slug: post.slug}}">
                                   <img :src="post.image"  class="w-100 rounded lazy" style="object-fit: cover"></router-link>
                             </div>
                             
-                            <div class="col-md-8">
-                                <div class="card-body p-3">
+                            <div class="col-md-8 mt-3">
                                      <router-link :to="{name: 'detail_post', params: {slug: post.slug}}"
                                             class="text-dark text-decoration-none">
                                              <h5 class="text-secondary font-weight-bolder">{{ post.title }}</h5>
@@ -143,7 +142,6 @@
                                   <hr>
                                   <span class="text-secondary">{{ post.created_at }}</span>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </a>        
@@ -169,7 +167,7 @@
 <!-- POST -->
 
 <div class="container">    
-    <div class="row mb-0 bg-white shadow p-2 mb-3 bg-white " style="border-radius: 17px;">
+    <div class="row mb-0 bg-white shadow-sm p-3 mb-2 bg-body rounded" style="border-radius: 17px;">
         <div class="col-md-12 mb-3"></div>
             <div class="container">
                 <div class="row mb-3 text-left">
@@ -181,8 +179,8 @@
 
         <div class="col-12 col-md-4 col-lg-4 mb-4"  v-for="video in videos" :key="video.id">
                 <div class="text-decoration-none text-dark">
-                    <div class="card  h-100 shadow p-3 mb-3 bg-white rounded">
-                        <div class="row no-gutters p-2">
+                    <div class="card  h-100 shadow p-3  bg-white rounded">
+                        <div class="row no-gutters">
 
                             <div class="col-md-12">
                                    <iframe
@@ -192,15 +190,12 @@
                                             allowfullscreen></iframe>
                             </div>
                             
-                            <div class="col-md-8">
-                                <div class="card-body p-3">
+                            <div class="col-md-8 mt-3">
                                   
                                   <hr>
                                     <div class="text-dark text-decoration-none">
                                              <h5 class="text-secondary font-weight-bolder">{{ video.title }}</h5>
                                         </div>
-                                
-                                </div>
                             </div>
                         </div>
                     </div>

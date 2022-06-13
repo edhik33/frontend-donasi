@@ -21,13 +21,13 @@
         <!-- main content -->
 
 <div class="container">    
-        <div class="row mt-5 mb-5 bg-white shadow p-2 bg-white " style="border-radius: 20px;">
+        <div class="row mt-5 mb-5 bg-white shadow-sm p-3 mb-5 bg-body rounded " style="border-radius: 20px;">
         <div class="col-md-12 mb-5"></div>
 
 
 <div class="container mt-3">
     <div class="row justify-content-center">
-                <div class="col-12 col-md-4 col-lg-4 mb-4"  v-for="video in videos" :key="video.id">
+                <div class="col-12 col-md-4 col-lg-4 mb-2"  v-for="video in videos" :key="video.id">
                 <div class="text-decoration-none text-dark">
                     <div class="card  h-100 shadow p-3 mb-3 bg-white rounded">
                         <div class="row no-gutters p-2">
@@ -41,15 +41,14 @@
                             </div>
                             
                             <div class="col-md-8">
-                                <div class="card-body p-3">
+                            
                                   
                                   <hr>
                                     <div class="text-dark text-decoration-none">
-                                             <h5 class="text-secondary font-weight-bolder">{{ video.title }}</h5>
+                                             <span class="text-secondary font-weight-bolder">{{ video.title }}</span>
                                         </div>
                                 
                                 </div>
-                            </div>
                         </div>
                         </div>
 

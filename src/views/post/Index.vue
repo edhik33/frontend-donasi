@@ -21,18 +21,18 @@
         <!-- main content -->
 
 <div class="container">    
-        <div class="row mt-5 mb-5 bg-white shadow p-2 bg-white " style="border-radius: 20px;">
+        <div class="row mt-5 mb-5 bg-white shadow-sm p-3 mb-5 bg-body rounded" style="border-radius: 20px;">
         <div class="col-md-12 mb-5"></div>
 
 
 <div class="container mt-3">
     <div class="row justify-content-center">
-                <div class="col-12 col-md-4 col-lg-4 mb-5" v-for="post in posts" :key="post.id">
+        <div class="col-12 col-md-4 col-lg-4 mb-2" v-for="post in posts" :key="post.id">
             <div class="card border-0 mb-3 h-80 shadow p-3 bg-white rounded">
                  <img :src="post.image" class="card-img-top lazy" style="width: 100%;height: 200px;object-fit:cover">
-                <div class="card-body" style="width: 100%;height: 80px;">
+                <div  style="width: 100%;height: 80px;">
                     <div class="topic">
-                                                <a href="https://santrikoding.com/tag/laravel" class="badge badge-danger shadow-custom">{{ post.created_at }}</a>
+                                                <div href="" class="badge badge-danger shadow-custom mt-3">{{ post.created_at }}</div>
                                              
                                             </div>
                    <router-link :to="{name: 'detail_post', params: {slug: post.slug}}"
