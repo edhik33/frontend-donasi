@@ -56,11 +56,7 @@
 </template>
 
 <script>
- 
-    //import axios
     import axios from 'axios';
-
-    //import hook onMounted from vue
     import { ref, onMounted } from 'vue';
 
     export default {
@@ -70,12 +66,8 @@
         },
         
         setup() {
-            
-            //define state
             const tags = ref([]);
-             const campaigns = ref([]);
-
-            //on mounted
+            const campaigns = ref([]);
             onMounted(() => {
                 
                 axios.get('/api/campaign')
@@ -91,8 +83,6 @@
                         tags.value = [];
                     });
             })
-
-            //return data
             return {
                 tags,
                 campaigns

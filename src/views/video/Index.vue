@@ -25,20 +25,15 @@
                                             :src="video.embed" frameborder="0"
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
-                            </div>
-                            
+                            </div>                      
                             <div class="col-md-8">
-                            
-                                  
                                   <hr>
-                                    <div class="text-dark text-decoration-none">
-                                             <span class="text-secondary font-weight-bolder">{{ video.title }}</span>
-                                        </div>
-                                
-                                </div>
+                            <div class="text-dark text-decoration-none">
+                                        <span class="text-secondary font-weight-bolder">{{ video.title }}</span>
+                            </div>
                         </div>
-                        </div>
-
+                    </div>
+                </div>
             </div>
         </div>
                 <div class="text-center" v-show="moreExists">

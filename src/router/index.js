@@ -4,7 +4,6 @@ import axios from 'axios';
 
 axios.defaults.baseURL = "https://donasi.masbosblaster.com";
 
-//define a routes
 const routes = [
     {
         path: '/',
@@ -46,11 +45,7 @@ const routes = [
         name: 'detail_event',
         component: () => import( /* webpackChunkName: "EventShow" */ "@/views/event/Show")
     },
-    {
-        path: '/photo',
-        name: 'photo',
-        component: () => import( /* webpackChunkName: "PhotoIndex" */ "@/views/photo/Index")
-    },
+   
     {
         path: '/about',
         name: 'about',

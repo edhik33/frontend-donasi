@@ -114,9 +114,6 @@
         name: 'campaignCmponent',
 
         components: {
-            //loader component
-         
-            // component app
             Header,
             Footer
         },

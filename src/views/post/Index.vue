@@ -58,15 +58,10 @@
 </template>
 
 <script>
-    //import content loader
-
-    //import axios
     import axios from 'axios';
 
-    //import hook onMounted from vue
     import { ref, onMounted } from 'vue';
 
-    //import component
     import Header from "@/components/Header";
     import Footer from "@/components/Footer";
 

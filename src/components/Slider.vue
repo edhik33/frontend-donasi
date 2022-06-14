@@ -35,7 +35,6 @@
             const sliders = ref([]);
             const sliders_loader = ref(1);
             onMounted(() => {
-                //get data
                 axios.get('/api/slider')
                     .then(response => {
                         sliders.value = response.data.data.data;
