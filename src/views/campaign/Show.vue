@@ -6,10 +6,8 @@
 
         <!-- main content -->
 
-            <div class="jumbotron shadow-custom rounded-0 mt-3 mb-5">
-
         <!-- main content -->
-<div class="container mt-50">
+<div class="container mt-5zz0">
     <div class="row justify-content-center">
         <div class="col-md-8 mb-4">
             <div class="card border-0 rounded shadow-custom" style="border-radius: 20px">
@@ -49,7 +47,7 @@
             </div>
     </div>
 </div>
-    </div>
+    
 
         
       
