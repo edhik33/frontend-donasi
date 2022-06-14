@@ -108,11 +108,7 @@
                 axios.get(`/api/campaign/${route.params.slug}`)
                     .then(response => {
                         campaign.value = response.data.data;
-                    })
-
-                setTimeout(() => {
-                    return { x: 0, y: 0 } }, 100);
-                setTimeout()        
+                    })       
 
             });
 

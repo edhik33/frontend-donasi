@@ -115,7 +115,7 @@
 
         <div class="col-12 col-md-4 col-lg-4 mb-4"  v-for="post in posts" :key="post.id">
                 <a href="" class="text-decoration-none text-dark">
-                    <div class="card  h-100 shadow p-3 bg-white rounded">
+                    <div class="card  h-100 shadow p-2 bg-white rounded">
                         <div class="row no-gutters">
 
                             <div class="col-md-12">
@@ -123,7 +123,7 @@
                                   <img :src="post.image"  class="w-100 rounded lazy" style="object-fit: cover"></router-link>
                             </div>
                             
-                            <div class="col-md-8 mt-3">
+                            <div class="col-md-12 mt-3">
                                
                                      <router-link :to="{name: 'detail_post', params: {slug: post.slug}}"
                                             class="text-dark text-decoration-none">
@@ -266,8 +266,6 @@
                         videos.value = response.data.data.data;
                     })
 
-                    setTimeout(() => {
-                    return { x: 0, y: 0 } }, 100);
                     
                       
             });
@@ -277,7 +275,7 @@
                 posts,
                 campaigns,
                 categories,
-                setTimeout
+              
             }
         }
     }

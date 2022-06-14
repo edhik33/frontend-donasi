@@ -16,7 +16,7 @@
     <div class="row justify-content-center">
                 <div class="col-12 col-md-4 col-lg-4 mb-2"  v-for="video in videos" :key="video.id">
                 <div class="text-decoration-none text-dark">
-                    <div class="card  h-100 shadow p-3 mb-3 bg-white rounded">
+                    <div class="card  h-100 shadow p-1 mb-3 bg-white rounded">
                         <div class="row no-gutters p-2">
 
                             <div class="col-md-12">
@@ -106,9 +106,6 @@
 
             onMounted(() => {
                 fetchDatavideos()
-                setTimeout(() => {
-                    return { x: 0, y: 0 } }, 100);
-                 
 
             });
 
@@ -117,7 +114,6 @@
                 moreExists,
                 nextPage,
                 loadMore,
-                   setTimeout   
             }
 
         }

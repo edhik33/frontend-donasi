@@ -12,7 +12,7 @@
                 <div class="text-homepage text-center" style="margin-top: 20px">
                     <div class="img-circle">
                     </div>
-                    <h3 class="text-dark font-weight-bold mt-3"> {{ categoryInfo.message }} </h3>
+                    <h5 class="text-dark font-weight-bold mt-3"> {{ categoryInfo.message }} </h5>
                 </div>
             </div>
         </div>
@@ -28,8 +28,8 @@
             <div class="container mb-3">
 
                 <div v-if="campaigns.length > 0" class="row">
-                    <div class="col-md-4" v-for="campaign in campaigns" :key="campaign.id">
-                        <div class="card h-100  shadow p-2" style="border-radius:12px">
+                    <div class="col-md-4 mb-4" v-for="campaign in campaigns" :key="campaign.id">
+                        <div class="card h-100  shadow mb-4" style="border-radius:12px">
                             <div class="card-img">
 
                                 <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">

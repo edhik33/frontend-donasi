@@ -38,9 +38,8 @@
                                 <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.target_donation) }}</h6> 
                             </div>                       
                         </div>
-                                       
-                                        
-                                        <router-link :to="{name: 'form', params: {slug: form}}" class="btn btn-success shadow-sm p-2 mb-3 bg-success text-white rounded fixed-bottom mx-auto" style="width:45%;font-size:15px"> Donasi <i class="fa fa-long-arrow-alt-right"></i>  </router-link>
+                                                                               
+ <router-link :to="{name: 'form', params: {slug: form}}" class="btn btn-success shadow-sm p-2 mb-3 bg-success text-white rounded  mx-auto" style="width:100%;font-size:15px"> Donasi <i class="fa fa-long-arrow-alt-right"></i>  </router-link>
                     <h6 class="mt-3 text-secondary" v-html="campaign.description"></h6>
                     </div>
                 </div>
@@ -96,9 +95,6 @@
                     .then(response => {
                         campaign.value = response.data.data;
                     })
-
-                setTimeout(() => {
-                    return { x: 0, y: 0 } }, 100);
         
 
             });
@@ -106,7 +102,6 @@
             return {
                 campaigns,
                 campaign,
-                setTimeout
             }
 
         }

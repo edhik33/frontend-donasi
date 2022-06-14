@@ -7,7 +7,7 @@
         <!-- main content -->
 <div class="container mt-100">
     <div class="row justify-content-center">
-        <div class="col-md-8 mb-4">
+        <div class="col-md-8 mb-4" >
             <div class="card border-0 rounded shadow-custom">
                 <div class="card-body">
                     <h4 class="font-weight-bold" style="margin-top: 0px">{{ post.title }}</h4>
@@ -34,10 +34,13 @@
                             <div class="col-md-12" v-for="post in posts" :key="post.id">
                                 <div class="article-related">
                                    <router-link :to="{name: 'detail_post', params: {slug: post.slug}}">
-                                       <img :src="post.image"  class="w-100 rounded lazy" style="object-fit: cover">
+                                       <img :src="post.image"  class="w-100 mb-3 rounded lazy" style="object-fit: cover">
                                     </router-link>
-                                    <p class="mt-2" style="font-size: 12px;color: #847e7e">
-                                        Oleh <strong>Quranesia</strong> {{ post.created_at }}</p>
+
+                                    <div
+                                            class="text-dark text-decoration-none">
+                                             <span class="text-secondary font-weight-bolder mt-2">{{ post.title }}</span>
+                                        </div>
                                       <hr>
                                 </div>
                             </div>
@@ -97,10 +100,6 @@
                         post.value = response.data.data;
                     })
 
-                setTimeout(() => {
-                    return { x: 0, y: 0 } }, 100);
-                     
-
             });
 
             
@@ -108,7 +107,7 @@
             return {
                 posts,
                 post,
-                setTimeout
+              
                
             }
 
