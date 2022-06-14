@@ -96,20 +96,18 @@
             Footer
         },
 
+
         setup() {
             const campaign              = ref({});
             const campaigns              = ref({});
            
             const route = useRoute();
 
-            setTimeout(() => {
-            return { x: 0, y: 0 }
-             }, 100);
-
+           
 
             onMounted(() => {
 
-                  axios.get('/api/campaign')
+                axios.get('/api/campaign')
                     .then(response => {
                         campaigns.value = response.data.data.data;
                     })
@@ -120,12 +118,15 @@
                         campaign.value = response.data.data;
                     })
 
+                setTimeout(() => {
+                    return { x: 0, y: 0 } }, 100);
+                setTimeout()     
+
             });
 
             return {
                 campaigns,
                 campaign,
-                setTimeout
             }
 
         }

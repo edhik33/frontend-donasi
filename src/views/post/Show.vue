@@ -60,19 +60,12 @@
 </template>
 
 <script>
-    //import content loader
-   
-
-    //import axios
     import axios from 'axios';
 
-    //import hook onMounted from vue
     import { ref, onMounted } from 'vue';
 
-    //import hook useRoute
     import { useRoute } from 'vue-router';
 
-    //import component
     import Header from "@/components/Header";
     import Footer from "@/components/Footer";
 
@@ -80,41 +73,38 @@
         name: 'PostDetailComponent',
 
         components: {
-            //loader component
-         
-            //component app
             Header,
             Footer
         },
 
+       
+        },
         setup() {
-            
-            //define state
             const post              = ref({});
             const posts              = ref({});
-           
-         
-
-            //define route
             const route = useRoute();
 
-            //run hook onMounted
+          
+
             onMounted(() => {
 
-                  axios.get('/api/post')
+                axios.get('/api/post')
                     .then(response => {
                         posts.value = response.data.data.data;
                     })
 
-                //get post detail
                 axios.get(`/api/post/${route.params.slug}`)
                     .then(response => {
                         post.value = response.data.data;
                     })
-
-             
+                         
+                setTimeout(() => {
+                    return { x: 0, y: 0 } }, 100);
+                setTimeout()        
 
             });
+
+            
 
             return {
                 posts,

@@ -71,15 +71,9 @@
 </template>
 
 <script>
-    //import content loader
-
-    //import axios
     import axios from 'axios';
-
-    //import hook onMounted from vue
     import { ref, onMounted } from 'vue';
 
-    //import component
     import Header from "@/components/Header";
     import Footer from "@/components/Footer";
 
@@ -87,79 +81,54 @@
         name: 'videoCmponent',
 
         components: {
-            //loader component
-         
-            // component app
             Header,
             Footer
         },
 
         setup() {
-            
-            //define state
             const videos = ref([]);
         
-            //define state moreExists
             let moreExists = ref(false);
             let nextPage = ref(0);
 
-            //define method
             const fetchDatavideos = () => {
                 axios.get('/api/video')
                     .then(response => {
-
-                        //assign response to state videos
                         videos.value = response.data.data.data
-
-                        //check if response has next page
                         if (response.data.data.current_page < response.data.data.last_page) {
-                            
-                            //set state moreExists to true
                             moreExists.value = true
-
-                            //increment nextPage
                             nextPage.value = response.data.data.current_page + 1;
                         } else {
-
-                            //set state moreExists to false
                             moreExists.value = false
                         }
                     })
             };
 
-            //define method loadMore
             const loadMore = () => {
                 axios.get(`/api/video?page=${nextPage.value}`)
                     .then(response => {
                         if (response.data.data.current_page < response.data.data.last_page) {
-                                
-                                //set state moreExists to true
                                 moreExists = true
-
-                                //increment nextPage
                                 nextPage = response.data.data.current_page + 1
                         } else {
 
                                response.data.data.data.forEach(data => {
-                            videos.value.push(data)
+                                videos.value.push(data)
                         })
-                          //set state moreExists to false
                             moreExists.value = false
                         }
-                        
-                        //assign response to state videos
                         
                     })
             };
 
-            //run hook onMounted
             onMounted(() => {
-
-                //fetch data videos
                 fetchDatavideos()
+                setTimeout(() => {
+                    return { x: 0, y: 0 } }, 100);
+                setTimeout()        
+
             });
 
-            //return data
             return {
                 videos,
                 moreExists,
