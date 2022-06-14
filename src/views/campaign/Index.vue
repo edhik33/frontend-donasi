@@ -11,7 +11,7 @@
                     <div class="img-circle">
 
                     </div>
-                    <h3 class="text-dark font-weight-bold mt-3"> Kegiatan Kami </h3>
+                    <h4 class="text-dark font-weight-bold mt-3"> Program </h4>
                     <h6 class="text-dark">Mari selamatkan Indonesia bersama 25 juta santri penghafal Al-Qur’an.</h6>
                 </div>
             </div>

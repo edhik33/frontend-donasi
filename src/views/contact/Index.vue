@@ -1,5 +1,5 @@
 <template>
-    <div class="post-index" style="background-color:#F6FBFF;">
+    <div class="contact" style="background-color:#F6FBFF;">
         <!-- header -->
         <Header />
         <!-- end header -->

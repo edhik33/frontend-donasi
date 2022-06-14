@@ -11,7 +11,7 @@
                     <div class="img-circle">
                        
                     </div>
-                    <h3 class="text-dark font-weight-bold mt-3"> Program Kami </h3>
+                    <h4 class="text-dark font-weight-bold mt-3"> Kegiatan SIDAQ </h4>
                     <h6 class="text-dark">Mari selamatkan Indonesia bersama 25 juta santri penghafal Al-Qur’an.</h6>
                 </div>
             </div>
@@ -32,17 +32,15 @@
                  <img :src="post.image" class="card-img-top lazy" style="width: 100%;height: 200px;object-fit:cover">
                 <div  style="width: 100%;height: 80px;">
                     <div class="topic">
-                                                <div href="" class="badge badge-danger shadow-custom mt-3">{{ post.created_at }}</div>
-                                             
-                                            </div>
+                        <div href="" class="badge badge-danger shadow-custom mt-3">{{ post.created_at }}</div>
+                            </div>
                    <router-link :to="{name: 'detail_post', params: {slug: post.slug}}"
                                             class="text-dark text-decoration-none">
                                              <span class="text-secondary font-weight-bolder">{{ post.title }}</span>
                                         </router-link>
+                     </div>
                 </div>
-
             </div>
-        </div>
                 <div class="text-center" v-show="moreExists">
                     <button type="button" class="btn btn-success btn-md mb-3" v-on:click="loadMore"><span class="fa fa-arrow-down"></span> LIHAT LEBIH BANYAK</button>
                 </div>
@@ -76,79 +74,46 @@
         name: 'postCmponent',
 
         components: {
-            //loader component
-         
-            // component app
             Header,
             Footer
         },
 
         setup() {
-            
-            //define state
             const posts = ref([]);
         
-            //define state moreExists
             let moreExists = ref(false);
             let nextPage = ref(0);
 
-            //define method
             const fetchDataposts = () => {
                 axios.get('/api/post')
                     .then(response => {
-
-                        //assign response to state posts
                         posts.value = response.data.data.data
-
-                        //check if response has next page
                         if (response.data.data.current_page < response.data.data.last_page) {
-                            
-                            //set state moreExists to true
                             moreExists.value = true
-
-                            //increment nextPage
                             nextPage.value = response.data.data.current_page + 1;
                         } else {
-
-                            //set state moreExists to false
                             moreExists.value = false
                         }
                     })
             };
 
-            //define method loadMore
             const loadMore = () => {
                 axios.get(`/api/post?page=${nextPage.value}`)
                     .then(response => {
                         if (response.data.data.current_page < response.data.data.last_page) {
-                                
-                                //set state moreExists to true
                                 moreExists = true
-
-                                //increment nextPage
                                 nextPage = response.data.data.current_page + 1
                         } else {
-
-                               response.data.data.data.forEach(data => {
-                            posts.value.push(data)
+                                response.data.data.data.forEach(data => {
+                                posts.value.push(data)
                         })
-                          //set state moreExists to false
                             moreExists.value = false
                         }
-                        
-                        //assign response to state posts
-                        
                     })
             };
-
-            //run hook onMounted
             onMounted(() => {
-
-                //fetch data posts
                 fetchDataposts()
             });
-
-            //return data
             return {
                 posts,
                 moreExists,

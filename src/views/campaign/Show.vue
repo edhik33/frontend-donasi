@@ -7,23 +7,9 @@
         <!-- main content -->
 
             <div class="jumbotron shadow-custom rounded-0 mt-3 mb-5">
-    <div class="container">
-        <div class="row mt-3 mb-0">
-            <div class="col-md-8 offset-md-2 mb-0">
-                <div class="text-homepage text-center" style="margin-top: 20px">
-                    <div class="img-circle">
-                     
-                    </div>
-                    <h3 class="text-dark font-weight-bold mt-3"> Program </h3>
-             
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
         <!-- main content -->
-<div class="container mt-40">
+<div class="container mt-50">
     <div class="row justify-content-center">
         <div class="col-md-8 mb-4">
             <div class="card border-0 rounded shadow-custom" style="border-radius: 20px">
@@ -61,12 +47,9 @@
                     </div>
                 </div>
             </div>
-
-     
-          
     </div>
 </div>
-     
+    </div>
 
         
       

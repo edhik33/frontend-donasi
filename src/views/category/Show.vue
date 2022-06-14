@@ -33,8 +33,6 @@
                             <div class="card-img">
 
                                 <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
-
-                                <img :src="campaign.image"  class="w-100 rounded lazy" style="object-fit: cover">
                             </div>
                             <div class="card-body">
                                 <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"

@@ -21,7 +21,7 @@
         </li>
 
           <li class="nav-item ">
-        <router-link :to="{name: 'video'}" href="" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-uppercase">KEGIATAN</router-link>
+        <router-link :to="{name: 'video'}" href="" aria-haspopup="true" aria-expanded="false" class="nav-link font-weight-bold text-uppercase">VIDEO</router-link>
         </li>
 
           <li class="nav-item " >

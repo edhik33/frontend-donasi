@@ -54,7 +54,7 @@ const routes = [
     {
         path: '/about',
         name: 'about',
-        component: () => import( /* webpackChunkName: "VideoIndex" */ "@/views/video/Index")
+        component: () => import( /* webpackChunkName: "VideoIndex" */ "@/views/about/Index")
     },
 
     {

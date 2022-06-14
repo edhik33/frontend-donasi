@@ -4,20 +4,7 @@
         <Header />
         <!-- end header -->
   <div class="jumbotron shadow-custom rounded-0 mt-3 mb-0">
-    <div class="container">
-        <div class="row mt-3 mb-0">
-            <div class="col-md-8 offset-md-2 mb-0">
-                <div class="text-homepage text-center" style="margin-top: 20px">
-                    <div class="img-circle">
-                       
-                    </div>
-                    <h3 class="text-dark font-weight-bold mt-3"> Kegiatan Kami </h3>
-                 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+  
         <!-- main content -->
 
 <div class="container">    
@@ -61,6 +48,7 @@
         </div>
         </div>
         </div>
+</div>
 </div>
         <!-- main content -->
 
@@ -125,7 +113,7 @@
                 fetchDatavideos()
                 setTimeout(() => {
                     return { x: 0, y: 0 } }, 100);
-                setTimeout()        
+                 
 
             });
 
@@ -133,7 +121,8 @@
                 videos,
                 moreExists,
                 nextPage,
-                loadMore
+                loadMore,
+                   setTimeout   
             }
 
         }
