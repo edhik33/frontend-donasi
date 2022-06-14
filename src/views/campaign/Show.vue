@@ -120,13 +120,14 @@
 
                 setTimeout(() => {
                     return { x: 0, y: 0 } }, 100);
-                setTimeout()     
+        
 
             });
 
             return {
                 campaigns,
                 campaign,
+                setTimeout
             }
 
         }

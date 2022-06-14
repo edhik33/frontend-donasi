@@ -61,7 +61,7 @@
             </div>
 
         <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated rounded-pill bg-success" role="progressbar" :style="{ width: percentage(campaign.donation , campaign.target_donation) + '%'}"  aria-valuemin="0" aria-valuemax="100">{{ percentage(campaign.donation , campaign.target_donation) }} %</div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated rounded-pill bg-success" role="progressbar" :style="{ width: percentage(campaign.donation , campaign.target_donation) + '%'}"  aria-valuemin="0" aria-valuemax="100">{{ Math.round(percentage(campaign.donation , campaign.target_donation)) }} %</div>
         </div>
                             
         <div class="mt-2">        
@@ -268,7 +268,8 @@
 
                     setTimeout(() => {
                     return { x: 0, y: 0 } }, 100);
-                    setTimeout()     
+                    
+                      
             });
 
             return {
@@ -276,6 +277,7 @@
                 posts,
                 campaigns,
                 categories,
+                setTimeout
             }
         }
     }

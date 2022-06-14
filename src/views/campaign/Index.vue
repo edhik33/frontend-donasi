@@ -131,59 +131,37 @@
             const fetchDataCampaigns = () => {
                 axios.get('/api/campaign')
                     .then(response => {
-
-                        //assign response to state campaigns
                         campaigns.value = response.data.data.data
-
-                        //check if response has next page
                         if (response.data.data.current_page < response.data.data.last_page) {
-                            
-                            //set state moreExists to true
                             moreExists.value = true
-
-                            //increment nextPage
                             nextPage.value = response.data.data.current_page + 1;
                         } else {
-
-                            //set state moreExists to false
                             moreExists.value = false
                         }
                     })
             };
 
-            //define method loadMore
             const loadMore = () => {
                 axios.get(`/api/campaign?page=${nextPage.value}`)
                     .then(response => {
                         if (response.data.data.current_page < response.data.data.last_page) {
                                 
-                                //set state moreExists to true
                                 moreExists = true
-
-                                //increment nextPage
                                 nextPage = response.data.data.current_page + 1
                         } else {
 
                                response.data.data.data.forEach(data => {
                             campaigns.value.push(data)
                         })
-                          //set state moreExists to false
                             moreExists.value = false
                         }
-                        
-                        //assign response to state campaigns
                         
                     })
             };
 
-            //run hook onMounted
             onMounted(() => {
-
-                //fetch data campaigns
                 fetchDataCampaigns()
             });
-
-            //return data
             return {
                 campaigns,
                 moreExists,
