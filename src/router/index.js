@@ -1,10 +1,7 @@
-//import vue router
 import { createRouter, createWebHistory } from 'vue-router';
 
-//import axios
 import axios from 'axios';
 
-//default base URL / EndPoint API
 axios.defaults.baseURL = "https://donasi.masbosblaster.com";
 
 //define a routes

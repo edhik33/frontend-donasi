@@ -19,7 +19,7 @@
             <!-- category section -->
 
    
-<div v-if="categories.length > 0">
+
     <div class="container">
         <div class="row mt-3 bg-white shadow-sm mb-3 bg-body rounded " style="border-radius: 17px;">
             <div class="col-md-12  bg-dark"></div>
@@ -32,21 +32,10 @@
                 </div>
             </div>
         </div>
-    </div>
+ 
+  
 
-    <div v-else>
-        <div class="row">
-            <div v-for="loader in categories_loader"
-                :key="loader">
-                <div class="card border-0 shadow-sm rounded-lg mb-3">
-                    <div class="card-body pt-4">
-                        <ListLoader />
-                    </div>
-                </div>
-            </div>      
-        </div>
-    </div>
-            
+ 
                        
  <!-- end category -->
 
@@ -68,13 +57,13 @@
 
         <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
             <div class="mt-3" style="height: 40px;background: #fff;">
-                <span class=" text-dark text-center" style="font-size: 15px;">{{ campaign.title }}</span>
+                <span class=" text-secondary text-center" style="font-size: 15px;">{{ campaign.title }}</span>
             </div>
 
-        <div class="progress mt-2 mb-2">
-            <div class="progress-bar bg-success rounded-0" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated rounded-pill bg-success" role="progressbar" :style="{ width: percentage(campaign.donation , campaign.target_donation) + '%'}"  aria-valuemin="0" aria-valuemax="100">{{ percentage(campaign.donation , campaign.target_donation) }}%</div>
         </div>
-                
+                            
         <div class="mt-2">        
             <div class="row align-items-left jumbotron-santri-koding">
                 <div class="col-12 col-md-6 text-left">
@@ -103,7 +92,7 @@
         </div>
 
             <div class="col-md-12 mb-4">
-                <div class="text-center mt-3">
+                <div class="text-center mt-4">
                     <router-link :to="{name: 'campaign'}" class="btn btn-success shadow-sm p-2 mb-1 mt-1 bg-white text-success rounded">Lihat Semua Program <i class="fa fa-long-arrow-alt-right"></i>
                     </router-link>
                 </div>
@@ -230,11 +219,6 @@
 </template>
 
 <script>
-
-    import {
-        ListLoader
-    } from 'vue-content-loader';
-
     import axios from 'axios';
     import { ref, onMounted } from 'vue';
 
@@ -247,7 +231,6 @@
 
         components: {
             Slider,
-            ListLoader,
             Header,
             Footer,
          
@@ -255,7 +238,6 @@
         
         setup() {
             const categories = ref([]);
-            const categories_loader = ref(1);
             const campaigns = ref([]);
             const posts = ref([]);
             const videos = ref([]);
@@ -290,7 +272,6 @@
                 posts,
                 campaigns,
                 categories,
-                categories_loader,
             }
         }
     }

@@ -20,13 +20,8 @@
 </template>
 
 <script>
-    //import content loader
-  
-
-    //import axios
     import axios from 'axios';
 
-    //import hook onMounted from vue
     import { ref, onMounted } from 'vue';
 
     export default {
@@ -37,28 +32,18 @@
         },
         
         setup() {
-            
-            //define state
             const sliders = ref([]);
-
-            //define state
             const sliders_loader = ref(1);
-
-            //on mounted
             onMounted(() => {
                 //get data
                 axios.get('/api/slider')
                     .then(response => {
-                        //set data
                         sliders.value = response.data.data.data;
                     })
                     .catch(() => {
-                        //set data
                         sliders.value = [];
                     });
             });
-
-            //return data
             return {
                 sliders,
                 sliders_loader
