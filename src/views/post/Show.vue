@@ -78,7 +78,6 @@
         },
 
        
-        },
         setup() {
             const post              = ref({});
             const posts              = ref({});
@@ -97,7 +96,7 @@
                     .then(response => {
                         post.value = response.data.data;
                     })
-                         
+
                 setTimeout(() => {
                     return { x: 0, y: 0 } }, 100);
                 setTimeout()        

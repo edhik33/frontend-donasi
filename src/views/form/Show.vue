@@ -102,12 +102,12 @@
 
                   axios.get('/api/campaign')
                     .then(response => {
-                        posts.value = response.data.data.data;
+                        campaigns.value = response.data.data.data;
                     })
 
                 axios.get(`/api/campaign/${route.params.slug}`)
                     .then(response => {
-                        post.value = response.data.data;
+                        campaign.value = response.data.data;
                     })
 
                 setTimeout(() => {
