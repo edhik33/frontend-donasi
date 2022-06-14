@@ -36,10 +36,9 @@
                              </div>
 
                            
-                                <div class="progress mt-2 mb-2">
-                                    <div class="progress-bar bg-success rounded-0" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">28%</div>
-                                    </div>
-                              
+                              <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated rounded-pill bg-success" role="progressbar" :style="{ width: percentage(campaign.donation , campaign.target_donation) + '%'}"  aria-valuemin="0" aria-valuemax="100">{{ Math.round(percentage(campaign.donation , campaign.target_donation)) }} %</div>
+                            </div>
 
                             <div class="mt-2">
                                 <div class="row align-items-center jumbotron-santri-koding">
