@@ -7,7 +7,7 @@
         <!-- main content -->
 
         <!-- main content -->
-<div class="container mt-5zz0">
+<div class="container mt-100">
     <div class="row justify-content-center">
         <div class="col-md-8 mb-4">
             <div class="card border-0 rounded shadow-custom" style="border-radius: 20px">
@@ -37,7 +37,7 @@
                             <span style="color:grey">Target Donasi</span>
                                 <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.target_donation) }}</h6> 
                             </div>                       
-                                          </div>
+                        </div>
                                        
                                         
                                         <router-link :to="{name: 'form', params: {slug: form}}" class="btn btn-success shadow-sm p-2 mb-3 bg-success text-white rounded fixed-bottom mx-auto" style="width:45%;font-size:15px"> Donasi <i class="fa fa-long-arrow-alt-right"></i>  </router-link>
@@ -48,9 +48,6 @@
     </div>
 </div>
     
-
-        
-      
 
         <!-- main content -->
 
