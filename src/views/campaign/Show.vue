@@ -102,6 +102,11 @@
            
             const route = useRoute();
 
+            setTimeout(() => {
+            return { x: 0, y: 0 }
+             }, 100);
+
+
             onMounted(() => {
 
                   axios.get('/api/campaign')
@@ -120,6 +125,7 @@
             return {
                 campaigns,
                 campaign,
+                setTimeout
             }
 
         }

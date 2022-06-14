@@ -123,15 +123,11 @@
         },
 
         setup() {
-            
-            //define state
             const campaigns = ref([]);
-        
-            //define state moreExists
+      
             let moreExists = ref(false);
             let nextPage = ref(0);
 
-            //define method
             const fetchDataCampaigns = () => {
                 axios.get('/api/campaign')
                     .then(response => {
