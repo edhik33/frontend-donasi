@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import axios from 'axios';
 
-axios.defaults.baseURL = "http://donasi.masbosblaster.com";
+axios.defaults.baseURL = "https://donasi.masbosblaster.com";
 
 //define a routes
 const routes = [
