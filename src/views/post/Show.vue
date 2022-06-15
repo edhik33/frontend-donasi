@@ -33,10 +33,10 @@
                             <div class="card-body">
                                 <h4 class="font-weight-bold"><i class="fa fa-tags"></i> TAGS</h4>
                                 <hr>
-                            <router-link :to="{name: 'detail_tag', params: { slug: tag.slug }}" v-for="tag in tags" :key="tag.id"><span class="badge badge-info shadow-custom mr-2 mb-2">{{ tag.name.toUpperCase() }}</span>
+                            <router-link :to="{name: 'detail_tag', params: { slug: tag.slug }}" v-for="tag in tags" :key="tag.id"><span class="badge badge-success shadow-custom mr-2 mb-2">{{ tag.name.toUpperCase() }}</span>
                             </router-link>
                         
-                                                            </div>
+                            </div>
                         </div>
                 </div>
             </div>
