@@ -9,11 +9,8 @@
         <div class="row mt-3 mb-0">
             <div class="col-md-8 offset-md-2 mb-0">
                 <div class="text-homepage text-center" style="margin-top: 20px">
-                    <div class="img-circle">
-                        <img src="https://sidaq.org/wp-content/uploads/2022/05/sidaq-logo-fix-new.png" style="width: 150px;">
-                    </div>
-                    <h3 class="text-dark font-weight-bold mt-3"> FORM DONASI </h3>
-                    <h6 class="text-dark">{{ campaign.title }}.</h6>
+                    <h5 class="text-dark font-weight-bold mt-3"> FORM DONASI </h5>
+                    <h6 class="text-dark">{{ campaign.title }}</h6>
                 </div>
             </div>
         </div>
@@ -37,6 +34,7 @@
             <input type="text" id="name" name="name" value="" placeholder="Tulis nama Anda" required>
         </div>
 
+
         <div class="loops-group">
             <label for="phone">Nomor : <span class="red">*</span></label>
             <input type="text" id="phone" name="phone" value="" placeholder="Sebutkan nomor HP aktif Anda: contoh 081234567890" pattern="[0]{1}[0-9]{8,12}" required>
@@ -47,6 +45,7 @@
             <label for="variants-input">Umur<span class="red">*</span></label>
              <input id="variants-input" type="number" name="variants[umur]" min="1" placeholder="umur" required>
         </div>
+
 
         <div class="loops-group">
         <input type="submit" value="Donasi Sekarang" class="loops-submit">

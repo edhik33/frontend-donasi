@@ -28,26 +28,16 @@
         <div class="col-md-4 mb-4">
             <div class="card rounded border-0 shadow-custom mb-4">
                 <div class="card-body">
-                    <h5 class="font-weight-600" style="margin-top: 0px"> <i class="fa fa-book"></i> Artikel Terkait</h5>
-                    <hr>
                         <div class="row">
-                            <div class="col-md-12" v-for="post in posts" :key="post.id">
-                                <div class="article-related">
-                                   <router-link :to="{name: 'detail_post', params: {slug: post.slug}}">
-                                       <img :src="post.image"  class="w-100 mb-3 rounded lazy" style="object-fit: cover">
-                                    </router-link>
-
-                                    <div
-                                            class="text-dark text-decoration-none">
-                                             <span class="text-secondary font-weight-bolder mt-2">{{ post.title }}</span>
-                                        </div>
-                                      <hr>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                        </div>                       
-                     </div>
+                                  
+                            <div class="card-body">
+                                <h4 class="font-weight-bold"><i class="fa fa-tags"></i> TAGS</h4>
+                                <hr>
+                            <router-link :to="{name: 'detail_tag', params: { slug: tag.slug }}" v-for="tag in tags" :key="tag.id"><span class="badge badge-info shadow-custom mr-2 mb-2">{{ tag.name.toUpperCase() }}</span>
+                            </router-link>
+                        
+                                                            </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -62,55 +52,57 @@
     </div>
 </template>
 
+
 <script>
     import axios from 'axios';
-
     import { ref, onMounted } from 'vue';
-
     import { useRoute } from 'vue-router';
-
     import Header from "@/components/Header";
     import Footer from "@/components/Footer";
-
     export default {
         name: 'PostDetailComponent',
-
         components: {
             Header,
             Footer
         },
-
        
         setup() {
             const post              = ref({});
             const posts              = ref({});
             const route = useRoute();
 
-          
+               //define state
+            const tags = ref([]);
 
+            //on mounted
             onMounted(() => {
-
+                axios.get('/api/tag')
+                    .then(response => {
+                        tags.value = response.data.data.data;
+                    })
+                    .catch(() => {
+                        tags.value = [];
+                    });
+            })
+          
+            onMounted(() => {
                 axios.get('/api/post')
                     .then(response => {
                         posts.value = response.data.data.data;
                     })
-
                 axios.get(`/api/post/${route.params.slug}`)
                     .then(response => {
                         post.value = response.data.data;
                     })
-
             });
-
             
-
             return {
+                tags,
                 posts,
                 post,
               
                
             }
-
         }
     }
 </script>
