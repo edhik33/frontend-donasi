@@ -12,7 +12,7 @@
 
 
 <div class="container mt-3">
-    <div class="row justify-content-center">
+    <div v-if="posts.length > 0" class="row  justify-content-center">
         <div class="col-12 col-md-4 col-lg-4 mb-2" v-for="post in posts" :key="post.id">
             <div class="card border-0 mb-3 h-80 shadow p-2 bg-white rounded">
                  <img :src="post.image" class="card-img-top lazy" style="width: 100%;height: 200px;object-fit:cover">
@@ -32,10 +32,19 @@
                 </div>
   
         </div>
+        <div v-else>
+                    <div class="alert alert-danger">
+                        DATA BERITA TERBARU BELUM TERSEDIA !
+                    </div>
+                </div>
         </div>
+        
         </div>
 </div>
+ 
 </div>
+
+
         <!-- main content -->
 
         <!-- footer -->
