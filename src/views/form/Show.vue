@@ -46,6 +46,12 @@
              <input id="variants-input" type="number" name="variants[umur]" min="1" placeholder="umur" required>
         </div>
 
+         <div class="loops-group">
+            <label for="phone">Program : <span class="red">*</span></label>
+            <input type="text" id="note" name="note" value="" placeholder="Ketik Program yang ingin anda donasi" required>
+        </div>
+
+
 
         <div class="loops-group">
         <input type="submit" value="Donasi Sekarang" class="loops-submit">
@@ -55,6 +61,7 @@
     <input type="hidden" name="_loops_nonce" value="">
     <p class="loops-footer">Powered by <a href="https://sidaq.org/?utm_source=form-embed&utm_content=173087">Masbos Dev.</a>.</p>
 </form>
+
 </div>
                 </div>
 </div>
@@ -130,3 +137,5 @@
     .loops-footer { font-size: 11px; color: #ccc; font-style: italic; }
     .red { color: #B30000; }
 </style>
+
+

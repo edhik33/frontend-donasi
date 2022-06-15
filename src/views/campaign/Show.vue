@@ -39,7 +39,7 @@
                             </div>                       
                         </div>
                                                                                
- <router-link :to="{name: 'form', params: {slug: form}}" class="btn btn-success shadow-sm p-2 mb-3 bg-success text-white rounded  mx-auto" style="width:100%;font-size:15px"> Donasi <i class="fa fa-long-arrow-alt-right"></i>  </router-link>
+                    <router-link :to="{name: 'form', params: {slug: form}}" class="btn btn-success shadow-sm p-2 mb-3 bg-success text-white rounded  mx-auto" style="width:100%;font-size:15px"> Donasi <i class="fa fa-long-arrow-alt-right"></i>  </router-link>
                     <h6 class="mt-3 text-secondary" v-html="campaign.description"></h6>
                     </div>
                 </div>

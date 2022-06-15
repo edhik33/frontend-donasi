@@ -32,10 +32,7 @@
                 </div>
             </div>
         </div>
- 
-  
 
- 
                        
  <!-- end category -->
 
@@ -124,7 +121,6 @@
                             </div>
                             
                             <div class="col-md-12 mt-3">
-                               
                                      <router-link :to="{name: 'detail_post', params: {slug: post.slug}}"
                                             class="text-dark text-decoration-none">
                                              <span class="text-secondary font-weight-bolder">{{ post.title }}</span>
