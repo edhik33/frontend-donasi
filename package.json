@@ -13,6 +13,7 @@
     "swiper": "^8.2.2",
     "vue": "^3.2.13",
     "vue-content-loader": "^2.0.1",
+    "vue-fab": "^2.3.1",
     "vue-router": "^4.0.15",
     "vue-slick": "^1.1.20",
     "vue-slick-carousel": "^1.0.6",
