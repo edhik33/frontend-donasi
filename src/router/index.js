@@ -78,7 +78,7 @@ const routes = [
         path: '/search',
         name: 'search',
         component: () => import( /* webpackChunkName: "search" */ '@/views/search/Index.vue')
-     },
+    },
 
   
     

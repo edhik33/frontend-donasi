@@ -97,6 +97,32 @@
 
 <!-- end PROGRAM -->
 
+
+<!-- PHOTO -->
+
+<div class="container">    
+    <div class="row mb-0 bg-white shadow-sm mb-3 bg-body rounded" style="border-radius: 17px;">
+        <div class="col-md-12 mb-3"></div>
+            <div class="container">
+                <div class="row mb-3 text-left">
+                        <div class="col-md-12"  v-for="photo in photos" :key="photo.id">
+                        
+                            <img :src="photo.image" href="https://www.google.com" class="w-100 rounded lazy" style="object-fit: cover;height100px">
+
+                        </div>
+                </div>
+            </div>
+   </div>
+            </div>
+
+
+
+
+
+<!-- end PHOOTO -->
+
+
+
 <!-- POST -->
 
 <div class="container">    
@@ -228,6 +254,7 @@
         },
         
         setup() {
+            const photos = ref([]);
             const categories = ref([]);
             const campaigns = ref([]);
             const posts = ref([]);
@@ -257,6 +284,11 @@
                         videos.value = response.data.data.data;
                     })
 
+                       axios.get('/api/homepage/photo')
+                    .then(response => {
+                        photos.value = response.data.data;
+                    })
+
                     
                       
             });
@@ -266,6 +298,7 @@
                 posts,
                 campaigns,
                 categories,
+                photos,
               
             }
         }
