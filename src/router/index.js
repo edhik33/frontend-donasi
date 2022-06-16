@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import axios from 'axios';
 
-axios.defaults.baseURL = "https://donasi.masbosblaster.com";
+axios.defaults.baseURL = "https://backend.quranesia.or.id";
 
 const routes = [
     {
