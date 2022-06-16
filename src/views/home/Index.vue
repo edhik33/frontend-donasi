@@ -110,32 +110,31 @@
                 </div>
             </div>
 
-        <div class="col-12 col-md-4 col-lg-4 mb-4"  v-for="post in posts" :key="post.id">
-                <a href="" class="text-decoration-none text-dark">
-                    <div class="card  h-100 shadow p-2 bg-white rounded">
-                        <div class="row no-gutters">
+<div class="col-12 col-md-4 col-lg-4 mb-4"  v-for="post in posts" :key="post.id">
+        <a href="" class="text-decoration-none text-dark">
+            <div class="card  h-100 shadow p-2 bg-white rounded">
+                <div class="row no-gutters">
 
-                            <div class="col-md-12">
-                                  <router-link :to="{name: 'detail_post', params: {slug: post.slug}}">
-                                  <img :src="post.image"  class="w-100 rounded lazy" style="object-fit: cover"></router-link>
-                            </div>
-                            
-                            <div class="col-md-12 mt-3">
-                                     <router-link :to="{name: 'detail_post', params: {slug: post.slug}}"
-                                            class="text-dark text-decoration-none">
-                                             <span class="text-secondary font-weight-bolder">{{ post.title }}</span>
-                                        </router-link>
-                                  <hr>
-                                  <span class="text-secondary">{{ post.created_at }}</span>
-                                </div>
-                          
-                        </div>
+                    <div class="col-md-12">
+                            <router-link :to="{name: 'detail_post', params: {slug: post.slug}}">
+                            <img :src="post.image"  class="w-100 rounded lazy" style="object-fit: cover"></router-link>
                     </div>
-                </a>        
+                    
+                    <div class="col-md-12 mt-3">
+                                <router-link :to="{name: 'detail_post', params: {slug: post.slug}}"
+                                    class="text-dark text-decoration-none">
+                                        <span class="text-secondary font-weight-bolder">{{ post.title }}</span>
+                                </router-link>
+                            <hr>
+                            <span class="text-secondary">{{ post.created_at }}</span>
+                    </div>
+                </div>
             </div>
-        </div>
+        </a>        
+    </div>
+</div>
 
-     
+
                  
       <div class="col-md-12 mb-3">
        <div class="text-center mt-3">

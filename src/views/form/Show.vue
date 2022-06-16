@@ -28,7 +28,8 @@
  
 
 <form id="form-order" class="loops-forms" action="https://app.loops.id/save-order/form-donasi-3" method="POST">
-                              
+
+
         <div class="loops-group">
             <label for="name">Nama : <span class="red">*</span></label>
             <input type="text" id="name" name="name" value="" placeholder="Tulis nama Anda" required>
@@ -46,9 +47,8 @@
              <input id="variants-input" type="number" name="variants[umur]" min="1" placeholder="umur" required>
         </div>
 
-         <div class="loops-group">
-            <label for="phone">Program : <span class="red">*</span></label>
-            <input type="text" id="note" name="note" value="" placeholder="Ketik Program yang ingin anda donasi" required>
+         <div class="loops-group" style="display:none;" >
+            <input  type="text" id="note" name="note" v-model="campaign.title" class="bg-grey" readonly>
         </div>
 
 
