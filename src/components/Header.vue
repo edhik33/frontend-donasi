@@ -2,7 +2,7 @@
 
     <nav  class="navbar navbar-expand-lg navbar-light bg-white shadow-custom fixed-top">
         <div class="container" >
-             <router-link :to="{name: 'home'}" class="navbar-brand"><img id="logo" src="https://sidaq.org/wp-content/uploads/2022/05/sidaq-logo-fix-new.png" style="max-height: 45px"></router-link>
+             <router-link :to="{name: 'home'}" class="navbar-brand"><img id="logo" src="/assets/img/logo.png" style="max-height: 45px"></router-link>
                 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

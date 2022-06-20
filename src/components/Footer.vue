@@ -5,7 +5,8 @@
                 <div class="container bg-white">
                     <div class="row">
                         <div class="col-sm-12 col-md-4 order-sm-0 order-md-0 bg-white py-3" >
-                            <img src="https://sidaq.org/wp-content/uploads/2022/05/sidaq-logo-fix-new.png" class="mt-3 text-center" style="width: 150px">
+                            <img src="/assets/img/logo.png" class="mt-3 text-center p-2" style="width: 90px">
+                            <img src="/assets/img/logoq.png" class="mt-3 text-center p-2" style="width: 90px">
                             <p class="mt-2">Mari selamatkan Indonesia bersama 25 juta<br> santri penghafal Al-Qur’an.</p>
                             <div class="social mt-4" style="margin-bottom: 30px">
                                 <a href="https://www.facebook.com/sidaq.or.id"><img src="/assets/img/fb.svg" style="width: 25px;" class="icon-footer"></a>

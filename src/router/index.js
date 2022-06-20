@@ -57,6 +57,12 @@ const routes = [
         name: 'form',
         component: () => import( /* webpackChunkName: "VideoIndex" */ "@/views/form/Show")
     },
+
+    {
+        path: '/formulir',
+        name: 'formulir',
+        component: () => import( /* webpackChunkName: "VideoIndex" */ "@/views/formulir/Show")
+    },
     {
         path: '/contact',
         name: 'contact',
@@ -73,6 +79,14 @@ const routes = [
         name: 'detail_campaign',
         component: () => import( /* webpackChunkName: "CampaignShow" */ "@/views/campaign/Show")
     },
+
+    {
+        path: '/campnesia/:slug',
+        name: 'detail_campnesia',
+        component: () => import( /* webpackChunkName: "CampaignShow" */ "@/views/campnesia/Show")
+    },
+
+
 
     {
         path: '/search',

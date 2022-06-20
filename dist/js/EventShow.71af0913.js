@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkhome"]=self["webpackChunkhome"]||[]).push([[107],{9505:function(e,n,t){t.r(n),t.d(n,{default:function(){return d}});var r=t(3396);const a={id:"event-detail"};function i(e,n,t,i,u,o){return(0,r.wg)(),(0,r.iD)("div",a," detail event ")}var u={name:"EventDetailComponent"},o=t(89);const c=(0,o.Z)(u,[["render",i]]);var d=c}}]);
+//# sourceMappingURL=EventShow.71af0913.js.map

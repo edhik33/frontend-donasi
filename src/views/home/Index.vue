@@ -48,45 +48,106 @@
                 </div>
             </div>
         </div>
+   <div class="col-12 col-md-4 col-lg-4 mb-3" v-for="campaign in campaigns" :key="campaign.id">
+     
+                <div class="card h-80 shadow p-3" style="border-radius:12px">
+                         <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
+                             <div class="mt-3 " style="height: 40px;background: #fff;">
+                                <span class=" text-dark" style="font-size: 15px;">{{ campaign.title }}</span>
+                             </div>
 
-<div class="col-12 col-md-4 col-lg-4 mb-4" v-for="campaign in campaigns" :key="campaign.id">
-    <div class="card h-80 shadow p-2" style="border-radius:12px">
+                           
+                              <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated rounded-pill bg-success" role="progressbar" :style="{ width: percentage(campaign.donation , campaign.target_donation) + '%'}"  aria-valuemin="0" aria-valuemax="100">{{ Math.round(percentage(campaign.donation , campaign.target_donation)) }} %</div>
+                            </div>
 
-        <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
-            <div class="mt-3" style="height: 40px;background: #fff;">
-                <span class=" text-secondary text-center" style="font-size: 15px;">{{ campaign.title }}</span>
-            </div>
+                            <div class="mt-2">
+                                <div class="row align-items-center jumbotron-santri-koding">
+                                    <div class="card-body text-center">
+                                       
+                                          <div class="row align-items-left jumbotron-santri-koding">
+                                               <div class="col-12 col-md-6 text-left">
+                                                    <h5 class="font-weight-bolder text-dark">{{ campaign.crowdfunding }}    <img :src="campaign.logo" class="align-items-left" style="width:20px;"></h5> 
+                                                </div>                   
+                                            </div>
 
-        <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated rounded-pill bg-success" role="progressbar" :style="{ width: percentage(campaign.donation , campaign.target_donation) + '%'}"  aria-valuemin="0" aria-valuemax="100">{{ Math.round(percentage(campaign.donation , campaign.target_donation)) }} %</div>
-        </div>
-                            
-        <div class="mt-2">        
-            <div class="row align-items-left jumbotron-santri-koding">
-                <div class="col-12 col-md-6 text-left">
-                    <h5 class="text-dark">{{ campaign.crowdfunding }}<img :src="campaign.logo" class="align-items-left" style="width:20px;"></h5> 
-                </div>                   
-            </div>
+                                <div class="row align-items-center jumbotron-santri-koding">
+                                    <div class="col-6 col-md-6 text-left">
 
-        <div class="row align-items-center jumbotron-santri-koding">
-            <div class="col-6 col-md-6 text-left">
-                    <span style="color:grey"> Terkumpul</span> 
-                    <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
-            </div>
-                
-            <div class="col-6 col-md-6 text-right">
-                    <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}" 
-                        class="text-dark text-decoration-none">
-                        <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
-                    </router-link>
+                                          <span style="color:grey"> Terkumpul</span> 
+                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
+                                   </div>
+                                 
+                                  <div class="col-6 col-md-6 text-right">
+                                    <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
+                                            class="text-dark text-decoration-none">
+                                           <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
+                                        </router-link>
+                                      
+                                  </div>
+
+        
+
+                            </div>
+                    
                     </div>
                 </div>
             </div>
+            </div>
+            </div>
+
+              <div class="col-12 col-md-4 col-lg-4 mb-3" v-for="campnesia in campnesias" :key="campnesia.id">
+     
+                <div class="card h-80 shadow p-3" style="border-radius:12px">
+                         <img :src="campnesia.image" class="w-100 rounded lazy" style="object-fit: cover">
+                             <div class="mt-3 " style="height: 40px;background: #fff;">
+                                <span class=" text-dark" style="font-size: 15px;">{{ campnesia.title }}</span>
+                             </div>
+
+                           
+                              <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated rounded-pill bg-success" role="progressbar" :style="{ width: percentage(campnesia.donation , campnesia.target_donation) + '%'}"  aria-valuemin="0" aria-valuemax="100">{{ Math.round(percentage(campnesia.donation , campnesia.target_donation)) }} %</div>
+                            </div>
+
+                            <div class="mt-2">
+                                <div class="row align-items-center jumbotron-santri-koding">
+                                    <div class="card-body text-center">
+                                       
+                                          <div class="row align-items-left jumbotron-santri-koding">
+                                               <div class="col-12 col-md-6 text-left">
+                                                    <h5 class="font-weight-bolder text-dark">{{ campnesia.crowdfunding }}    <img :src="campnesia.logo" class="align-items-left" style="width:20px;"></h5> 
+                                                </div>                   
+                                            </div>
+
+                                <div class="row align-items-center jumbotron-santri-koding">
+                                    <div class="col-6 col-md-6 text-left">
+
+                                          <span style="color:grey"> Terkumpul</span> 
+                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campnesia.donation) }}</h6> 
+                                   </div>
+                                 
+                                  <div class="col-6 col-md-6 text-right">
+                                    <router-link :to="{name: 'detail_campnesia', params: {slug: campnesia.slug}}"
+                                            class="text-dark text-decoration-none">
+                                           <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
+                                        </router-link>
+                                      
+                                  </div>
+
+        
+
+                            </div>
+                    
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
+
     </div>
-        </div>
+    </div>
+    </div>
 
             <div class="col-md-12 mb-4">
                 <div class="text-center mt-4">
@@ -94,6 +155,8 @@
                     </router-link>
                 </div>
             </div>
+
+
 
 <!-- end PROGRAM -->
 
@@ -271,6 +334,7 @@
             const campaigns = ref([]);
             const posts = ref([]);
             const videos = ref([]);
+             const campnesias = ref([]);
 
             
           
@@ -280,6 +344,13 @@
                     .then(response => {
                         categories.value = response.data.data.data;
                     })
+
+                
+                axios.get('/api/campnesia')
+                    .then(response => {
+                        campnesias.value = response.data.data.data;
+                    })
+
 
                  axios.get('/api/campaign')
                     .then(response => {
@@ -306,6 +377,7 @@
             });
 
             return {
+                campnesias,
                 videos,
                 posts,
                 campaigns,

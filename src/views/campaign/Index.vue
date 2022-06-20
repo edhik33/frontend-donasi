@@ -72,6 +72,54 @@
                     </div>
                 </div>
             </div>
+            </div>
+            </div>
+
+              <div class="col-12 col-md-4 col-lg-4 mb-3" v-for="campnesia in campnesias" :key="campnesia.id">
+     
+                <div class="card h-80 shadow p-3" style="border-radius:12px">
+                         <img :src="campnesia.image" class="w-100 rounded lazy" style="object-fit: cover">
+                             <div class="mt-3 " style="height: 40px;background: #fff;">
+                                <span class=" text-dark" style="font-size: 15px;">{{ campnesia.title }}</span>
+                             </div>
+
+                           
+                              <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated rounded-pill bg-success" role="progressbar" :style="{ width: percentage(campnesia.donation , campnesia.target_donation) + '%'}"  aria-valuemin="0" aria-valuemax="100">{{ Math.round(percentage(campnesia.donation , campnesia.target_donation)) }} %</div>
+                            </div>
+
+                            <div class="mt-2">
+                                <div class="row align-items-center jumbotron-santri-koding">
+                                    <div class="card-body text-center">
+                                       
+                                          <div class="row align-items-left jumbotron-santri-koding">
+                                               <div class="col-12 col-md-6 text-left">
+                                                    <h5 class="font-weight-bolder text-dark">{{ campnesia.crowdfunding }}    <img :src="campnesia.logo" class="align-items-left" style="width:20px;"></h5> 
+                                                </div>                   
+                                            </div>
+
+                                <div class="row align-items-center jumbotron-santri-koding">
+                                    <div class="col-6 col-md-6 text-left">
+
+                                          <span style="color:grey"> Terkumpul</span> 
+                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campnesia.donation) }}</h6> 
+                                   </div>
+                                 
+                                  <div class="col-6 col-md-6 text-right">
+                                    <router-link :to="{name: 'detail_campaign', params: {slug: campnesia.slug}}"
+                                            class="text-dark text-decoration-none">
+                                           <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
+                                        </router-link>
+                                      
+                                  </div>
+
+        
+
+                            </div>
+                    
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -120,6 +168,7 @@
 
         setup() {
             const campaigns = ref([]);
+            const campnesias = ref([]);
       
             let moreExists = ref(false);
             let nextPage = ref(0);
@@ -128,6 +177,19 @@
                 axios.get('/api/campaign')
                     .then(response => {
                         campaigns.value = response.data.data.data
+                        if (response.data.data.current_page < response.data.data.last_page) {
+                            moreExists.value = true
+                            nextPage.value = response.data.data.current_page + 1;
+                        } else {
+                            moreExists.value = false
+                        }
+                    })
+            };
+
+              const fetchDataCampnesias = () => {
+                axios.get('/api/campnesia')
+                    .then(response => {
+                        campnesias.value = response.data.data.data
                         if (response.data.data.current_page < response.data.data.last_page) {
                             moreExists.value = true
                             nextPage.value = response.data.data.current_page + 1;
@@ -157,8 +219,10 @@
 
             onMounted(() => {
                 fetchDataCampaigns()
+                fetchDataCampnesias()
             });
             return {
+                campnesias,
                 campaigns,
                 moreExists,
                 nextPage,
