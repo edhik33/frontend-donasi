@@ -3,7 +3,7 @@
         <!-- header -->
         <Header />
         <!-- end header -->
-  <div class="jumbotron shadow-custom rounded-0 mt-3 mb-0">
+  <div class="jumbotron rounded-0 mt-3 mb-0">
   
         <!-- main content -->
 

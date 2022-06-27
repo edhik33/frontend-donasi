@@ -6,13 +6,10 @@
   <div class="jumbotron shadow-custom rounded-0 mt-3 mb-0">
     <div class="container">
         <div class="row mt-3 mb-0">
-            <div class="col-md-12 offset-md-2 mb-0">
+            <div class="col-md-8 offset-md-2 mb-0">
                 <div class="text-homepage text-center" style="margin-top: 20px">
-                    <div class="img-circle">
-                       
-                    </div>
-                    <h4 class="text-dark font-weight-bold mt-3"> Kegiatan SIDAQ </h4>
-                    <h6 class="text-dark">Mari selamatkan Indonesia bersama 25 juta santri penghafal Al-Qur’an.</h6>
+                    <h4 class="text-dark font-weight-bold mt-3"> Artikel </h4>
+                    <h6 class="text-dark">Artikel ke Agama-an dan kegiatan Quranesia dan Sidaq</h6>
                 </div>
             </div>
         </div>
@@ -28,7 +25,7 @@
 <div class="container mt-3">
     <div class="row justify-content-center">
         <div class="col-12 col-md-4 col-lg-4 mb-2" v-for="post in posts" :key="post.id">
-            <div class="card border-0 mb-3 h-80 shadow p-2 bg-white rounded">
+            <div class="card  mb-3 h-80 shadow p-2 bg-white rounded">
                  <img :src="post.image" class="card-img-top lazy" style="width: 100%;height: 200px;object-fit:cover">
                 <div  style="width: 100%;height: 80px;">
                     <div class="topic">

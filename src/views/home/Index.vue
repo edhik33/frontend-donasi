@@ -36,6 +36,7 @@
                        
  <!-- end category -->
 
+
 <!-- PROGRAM -->
 <div class="container">    
         <div class="row mt-3 mb-0 bg-white shadow-sm  mb-3 bg-body rounded " style="border-radius: 17px;">
@@ -48,17 +49,18 @@
                 </div>
             </div>
         </div>
-   <div class="col-12 col-md-4 col-lg-4 mb-3" v-for="campaign in campaigns" :key="campaign.id">
+
+   <div class="col-12 col-md-4 col-lg-4 mb-3" v-for="sidaq in sidaqs" :key="sidaq.id">
      
                 <div class="card h-80 shadow p-3" style="border-radius:12px">
-                         <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
+                         <img :src="sidaq.image" class="w-100 rounded lazy" style="object-fit: cover">
                              <div class="mt-3 " style="height: 40px;background: #fff;">
-                                <span class=" text-dark" style="font-size: 15px;">{{ campaign.title }}</span>
+                                <span class=" text-dark" style="font-size: 15px;">{{ sidaq.title }}</span>
                              </div>
 
                            
                               <div class="progress">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated rounded-pill bg-success" role="progressbar" :style="{ width: percentage(campaign.donation , campaign.target_donation) + '%'}"  aria-valuemin="0" aria-valuemax="100">{{ Math.round(percentage(campaign.donation , campaign.target_donation)) }} %</div>
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated rounded-pill bg-success" role="progressbar" :style="{ width: percentage(sidaq.donation , sidaq.target_donation) + '%'}"  aria-valuemin="0" aria-valuemax="100">{{ Math.round(percentage(sidaq.donation , sidaq.target_donation)) }} %</div>
                             </div>
 
                             <div class="mt-2">
@@ -67,7 +69,7 @@
                                        
                                           <div class="row align-items-left jumbotron-santri-koding">
                                                <div class="col-12 col-md-6 text-left">
-                                                    <h5 class="font-weight-bolder text-dark">{{ campaign.crowdfunding }}    <img :src="campaign.logo" class="align-items-left" style="width:20px;"></h5> 
+                                                    <h5 class="font-weight-bolder text-dark">{{ sidaq.crowdfunding }}    <img :src="sidaq.logo" class="align-items-left" style="width:20px;"></h5> 
                                                 </div>                   
                                             </div>
 
@@ -75,11 +77,11 @@
                                     <div class="col-6 col-md-6 text-left">
 
                                           <span style="color:grey"> Terkumpul</span> 
-                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
+                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(sidaq.donation) }}</h6> 
                                    </div>
                                  
                                   <div class="col-6 col-md-6 text-right">
-                                    <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
+                                    <router-link :to="{name: 'detail_sidaq', params: {slug: sidaq.slug}}"
                                             class="text-dark text-decoration-none">
                                            <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
                                         </router-link>
@@ -95,59 +97,11 @@
             </div>
             </div>
             </div>
-
-              <div class="col-12 col-md-4 col-lg-4 mb-3" v-for="campnesia in campnesias" :key="campnesia.id">
-     
-                <div class="card h-80 shadow p-3" style="border-radius:12px">
-                         <img :src="campnesia.image" class="w-100 rounded lazy" style="object-fit: cover">
-                             <div class="mt-3 " style="height: 40px;background: #fff;">
-                                <span class=" text-dark" style="font-size: 15px;">{{ campnesia.title }}</span>
-                             </div>
-
-                           
-                              <div class="progress">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated rounded-pill bg-success" role="progressbar" :style="{ width: percentage(campnesia.donation , campnesia.target_donation) + '%'}"  aria-valuemin="0" aria-valuemax="100">{{ Math.round(percentage(campnesia.donation , campnesia.target_donation)) }} %</div>
-                            </div>
-
-                            <div class="mt-2">
-                                <div class="row align-items-center jumbotron-santri-koding">
-                                    <div class="card-body text-center">
-                                       
-                                          <div class="row align-items-left jumbotron-santri-koding">
-                                               <div class="col-12 col-md-6 text-left">
-                                                    <h5 class="font-weight-bolder text-dark">{{ campnesia.crowdfunding }}    <img :src="campnesia.logo" class="align-items-left" style="width:20px;"></h5> 
-                                                </div>                   
-                                            </div>
-
-                                <div class="row align-items-center jumbotron-santri-koding">
-                                    <div class="col-6 col-md-6 text-left">
-
-                                          <span style="color:grey"> Terkumpul</span> 
-                                                <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campnesia.donation) }}</h6> 
-                                   </div>
-                                 
-                                  <div class="col-6 col-md-6 text-right">
-                                    <router-link :to="{name: 'detail_campnesia', params: {slug: campnesia.slug}}"
-                                            class="text-dark text-decoration-none">
-                                           <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
-                                        </router-link>
-                                      
-                                  </div>
-
-        
-
-                            </div>
-                    
-                    </div>
-                </div>
             </div>
-
-        </div>
-    </div>
-
-    </div>
-    </div>
-    </div>
+            </div>
+            </div>
+           
+                
 
             <div class="col-md-12 mb-4">
                 <div class="text-center mt-4">
@@ -157,34 +111,11 @@
             </div>
 
 
-
 <!-- end PROGRAM -->
-
 
 <!-- PHOTO -->
 
-<div class="container">    
-    <div class="row mb-0 bg-white shadow-sm mb-3 bg-body rounded" style="border-radius: 17px;">
-        <div class="col-md-12 mb-3"></div>
-            <div class="container">
-                <div class="row mb-3 text-left">
-                        <div class="col-md-12"  v-for="photo in photos" :key="photo.id">
-                        
-                            <img :src="photo.image" href="https://www.google.com" class="w-100 rounded lazy" style="object-fit: cover;height100px">
-
-                        </div>
-                </div>
-            </div>
-   </div>
-            </div>
-
-
-
-
-
 <!-- end PHOOTO -->
-
-
 
 <!-- POST -->
 
@@ -289,16 +220,13 @@
        </div>
     </div>
 
-            <a href="https://kunjungi.website/ota-sidaq-new" class="float" target="_blank" onClick="fbq('track', 'Contact');">
-<i class="fa fa-whatsapp my-float"></i>
-</a>
 
 
 <!-- END POST PROGRAM -->
         <!-- footer -->
         <Footer />
 
-    <a href="https://kunjungi.website/ota-sidaq-new" class="float" target="_blank" onClick="fbq('track', 'Contact');">
+    <a href="https://mauorder.online/tanya-tanya-9" class="float" target="_blank" onClick="fbq('track', 'Contact');">
     <i class="fa fa-whatsapp my-float"></i>
     </a>
 
@@ -331,10 +259,12 @@
         setup() {
             const photos = ref([]);
             const categories = ref([]);
-            const campaigns = ref([]);
+            const sidaqs = ref([]);
             const posts = ref([]);
             const videos = ref([]);
-             const campnesias = ref([]);
+           
+         
+         
 
             
           
@@ -345,16 +275,11 @@
                         categories.value = response.data.data.data;
                     })
 
-                
-                axios.get('/api/campnesia')
-                    .then(response => {
-                        campnesias.value = response.data.data.data;
-                    })
+           
 
-
-                 axios.get('/api/campaign')
+                 axios.get('/api/sidaq')
                     .then(response => {
-                        campaigns.value = response.data.data.data;
+                        sidaqs.value = response.data.data.data;
                     })
 
                     axios.get('/api/post')
@@ -377,12 +302,12 @@
             });
 
             return {
-                campnesias,
                 videos,
                 posts,
-                campaigns,
+                sidaqs,
                 categories,
                 photos,
+
               
             }
         }

@@ -1,5 +1,5 @@
 <template>
-    <div class="campaign-index">
+    <div class="sidaq-index">
         <!-- header -->
         <Header />
         <!-- end header -->
@@ -23,39 +23,39 @@
         <!-- main content -->
 
 <div class="container">
-     <div class="row mt-3 mb-0 bg-white shadow p-2 bg-white" style="border-radius: 20px;">
+     <div class="row mt-3 mb-5 bg-white shadow p-2 bg-white" style="border-radius: 20px;">
         <div class="col-md-8 mb-5"></div>
             <div class="container mb-3">
 
-                <div v-if="campaigns.length > 0" class="row">
-                    <div class="col-md-4 mb-4" v-for="campaign in campaigns" :key="campaign.id">
+                <div v-if="sidaqs.length > 0" class="row">
+                    <div class="col-md-4 mb-4" v-for="sidaq in sidaqs" :key="sidaq.id">
                         <div class="card h-100  shadow mb-4" style="border-radius:12px">
                             <div class="card-img">
 
-                                <img :src="campaign.image" class="w-100 rounded lazy" style="object-fit: cover">
+                                <img :src="sidaq.image" class="w-100 rounded lazy" style="object-fit: cover">
                             </div>
                             <div class="card-body">
-                                <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}"
+                                <router-link :to="{name: 'detail_sidaq', params: {slug: sidaq.slug}}"
                                     class="text-dark text-decoration-none">
-                                    <h6>{{ campaign.title }}</h6>
+                                    <h6>{{ sidaq.title }}</h6>
                                 </router-link>
                             </div>
                             <div class="card-footer bg-white">
 
                                  <div class="row align-items-left jumbotron-santri-koding">
                                     <div class="col-12 col-md-6 text-left">
-                                        <h5 class="font-weight-bolder text-dark">{{ campaign.crowdfunding }}    <img :src="campaign.logo" class="align-items-left" style="width:20px;"></h5> 
+                                        <h5 class="font-weight-bolder text-dark">{{ sidaq.crowdfunding }}    <img :src="sidaq.logo" class="align-items-left" style="width:20px;"></h5> 
                                     </div>                   
                                  </div>
 
                                 <div class="row align-items-center jumbotron-santri-koding">
                                     <div class="col-6 col-md-6 text-left">
                                         <span style="color:grey"> Terkumpul</span> 
-                                        <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(campaign.donation) }}</h6> 
+                                        <h6 class="mb-3 line-height-1 text-dark font-weight-bold ">Rp. {{ formatPrice(sidaq.donation) }}</h6> 
                                 </div>
                                  
                                 <div class="col-6 col-md-6 text-right">
-                                    <router-link :to="{name: 'detail_campaign', params: {slug: campaign.slug}}" class="text-dark text-decoration-none">
+                                    <router-link :to="{name: 'detail_sidaq', params: {slug: sidaq.slug}}" class="text-dark text-decoration-none">
                                     <button type="button" class="btn btn-success shadow-sm p-2 mb-3 bg-success rounded">Selengkapnya</button>
                                     </router-link>
 
@@ -81,6 +81,7 @@
             </div>
         </div>
     </div>
+
 
         <!-- main content -->
 
@@ -109,33 +110,28 @@
         setup() {
             
             //define state
-            const campaigns         = ref([]);
+            const sidaqs         = ref([]);
             const categoryInfo  = ref({});
             let moreExists      = ref(false);
             let nextPage        = ref(0);
 
             const route = useRoute();
 
-            const fetchDataCampaignsByCategory = () => {
+            const fetchDatasidaqsByCategory = () => {
                 axios.get(`/api/category/${route.params.slug}`)
                     .then(response => {
                         
                     
                         categoryInfo.value = response.data.response
 
-                        campaigns.value = response.data.data.data
+                        sidaqs.value = response.data.data.data
 
-                        if (response.data.data.current_page < response.data.data.last_page) {
-                            
-                            moreExists.value = true
-
-                            nextPage.value = response.data.data.current_page + 1
-                             } else {
-                            moreExists.value = false
-                        }
+                      
 
                     })
             }
+
+         
 
             const loadMore = () => {
                 axios.get(`/api/category/${route.params.slug}?page=${nextPage.value}`)
@@ -148,21 +144,23 @@
                         }
 
                         response.data.data.data.forEach(data => {
-                            campaigns.value.push(data)
+                            sidaqs.value.push(data)
                         })
                     })
+
             }
 
             onMounted(() => {
-                fetchDataCampaignsByCategory()
+                fetchDatasidaqsByCategory()
             })
             watch(() => route.params.slug, () => {
-                    fetchDataCampaignsByCategory();
+                    fetchDatasidaqsByCategory();
                 }
             )
 
             return {
-                campaigns,
+          
+                sidaqs,
                 categoryInfo,
                 moreExists,
                 loadMore

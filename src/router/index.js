@@ -20,11 +20,14 @@ const routes = [
         name: 'post',
         component: () => import( /* webpackChunkName: "PostIndex" */ "@/views/post/Index"),
     },
+
     {
         path: '/campaign',
         name: 'campaign',
         component: () => import( /* webpackChunkName: "PostIndex" */ "@/views/campaign/Index"),
     },
+
+
     {
         path: '/tag/:slug',
         name: 'detail_tag',
@@ -52,17 +55,7 @@ const routes = [
         component: () => import( /* webpackChunkName: "VideoIndex" */ "@/views/about/Index")
     },
 
-    {
-        path: '/form',
-        name: 'form',
-        component: () => import( /* webpackChunkName: "VideoIndex" */ "@/views/form/Show")
-    },
-
-    {
-        path: '/formulir',
-        name: 'formulir',
-        component: () => import( /* webpackChunkName: "VideoIndex" */ "@/views/formulir/Show")
-    },
+ 
     {
         path: '/contact',
         name: 'contact',
@@ -74,16 +67,18 @@ const routes = [
         component: () => import( /* webpackChunkName: "PostShow" */ "@/views/post/Show")
     },
 
+   
     {
-        path: '/campaign/:slug',
-        name: 'detail_campaign',
-        component: () => import( /* webpackChunkName: "CampaignShow" */ "@/views/campaign/Show")
+        path: '/sidaq/:slug',
+        name: 'detail_sidaq',
+        component: () => import( /* webpackChunkName: "CampaignShow" */ "@/views/sidaq/Show")
     },
+    
 
     {
-        path: '/campnesia/:slug',
-        name: 'detail_campnesia',
-        component: () => import( /* webpackChunkName: "CampaignShow" */ "@/views/campnesia/Show")
+        path: '/city/:slug',
+        name: 'detail_city',
+        component: () => import( /* webpackChunkName: "CampaignShow" */ "@/views/city/Show")
     },
 
 

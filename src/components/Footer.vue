@@ -7,7 +7,7 @@
                         <div class="col-sm-12 col-md-4 order-sm-0 order-md-0 bg-white py-3" >
                             <img src="/assets/img/logo.png" class="mt-3 text-center p-2" style="width: 90px">
                             <img src="/assets/img/logoq.png" class="mt-3 text-center p-2" style="width: 90px">
-                            <p class="mt-2">Mari selamatkan Indonesia bersama 25 juta<br> santri penghafal Al-Qur’an.</p>
+                            <p class="mt-2">Mari selamatkan Indonesia bersama 25 juta santri penghafal Al-Qur’an.</p>
                             <div class="social mt-4" style="margin-bottom: 30px">
                                 <a href="https://www.facebook.com/sidaq.or.id"><img src="/assets/img/fb.svg" style="width: 25px;" class="icon-footer"></a>
                                 <a href="https://www.youtube.com/c/SelamatkanIndonesiaDenganAlQuran"><img src="/assets/img/yt.svg" class="icon-footer"></a>
@@ -57,37 +57,13 @@
 </template>
 
 <script>
-    import axios from 'axios';
-    import { ref, onMounted } from 'vue';
+
 
     export default {
         name: 'FooterComponent',
 
         components: {
         },
-        
-        setup() {
-            const tags = ref([]);
-            const campaigns = ref([]);
-            onMounted(() => {
-                
-                axios.get('/api/campaign')
-                    .then(response => {
-                        campaigns.value = response.data.data.data;
-                    })
-
-                axios.get('/api/tag')
-                    .then(response => {
-                        tags.value = response.data.data.data;
-                    })
-                    .catch(() => {
-                        tags.value = [];
-                    });
-            })
-            return {
-                tags,
-                campaigns
-            }
-        }
+      
     }
 </script>

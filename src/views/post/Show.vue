@@ -24,6 +24,7 @@
                     </div>
                 </div>
             </div>
+            
 
         <div class="col-md-4 mb-4">
             <div class="card rounded border-0 shadow-custom mb-4">
@@ -40,9 +41,37 @@
                         </div>
                 </div>
             </div>
+            
+            <div class="card rounded border-0 shadow-custom mb-4">
+                <div class="card-body">
+                    <h5 class="font-weight-600" style="margin-top: 0px"> <i class="fa fa-book"></i> Program Terkait</h5>
+                    <hr>
+                    <div class="row">
+                            <div class="col-md-12" v-for="sidaq in sidaqs" :key="sidaq.id">
+                                <div class="article-related"> 
+                                <router-link :to="{name: 'detail_sidaq', params: {slug: sidaq.slug}}">
+                                   <img :src="sidaq.image" class="w-100 rounded lazy mb-3" style="object-fit: cover">
+                                 </router-link>
+                                      <router-link :to="{name: 'detail_sidaq', params: {slug: sidaq.slug}}" class="mt-2" style="font-size: 12px;color: #847e7e">
+                                        <strong>{{ sidaq.title }}</strong>
+                                    </router-link>
+                                </div>
+                                <div class="col-md-12">
+                                <hr>
+                            </div>
+                            </div>
+                            
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+
         </div>
-    </div>
-</div>
+  </div>
+
+
+  
+
 
         <!-- main content -->
 
@@ -69,6 +98,7 @@
         setup() {
             const post              = ref({});
             const posts              = ref({});
+            const sidaqs              = ref({});
             const route = useRoute();
 
                //define state
@@ -84,6 +114,16 @@
                         tags.value = [];
                     });
             })
+
+              onMounted(() => {
+                axios.get('/api/sidaq')
+                    .then(response => {
+                        sidaqs.value = response.data.data.data;
+                    })
+                    .catch(() => {
+                        sidaqs.value = [];
+                    });
+            })
           
             onMounted(() => {
                 axios.get('/api/post')
@@ -95,8 +135,11 @@
                         post.value = response.data.data;
                     })
             });
+
+             
             
             return {
+                sidaqs,
                 tags,
                 posts,
                 post,
